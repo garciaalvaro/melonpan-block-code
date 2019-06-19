@@ -1,0 +1,92 @@
+<?php
+
+namespace MELONPANBLOCKCODE;
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+/**
+ * Prism language dependencies.
+ *
+ * @since 1.0.0
+ */
+function getLangDependenciesData() {
+
+	return array(
+		"javascript"        => "clike",
+		"actionscript"      => "javascript",
+		"arduino"           => "cpp",
+		"aspnet"            => array( "markup", "csharp" ),
+		"bison"             => "c",
+		"c"                 => "clike",
+		"csharp"            => "clike",
+		"cpp"               => "c",
+		"coffeescript"      => "javascript",
+		"crystal"           => "ruby",
+		"css-extras"        => "css",
+		"d"                 => "clike",
+		"dart"              => "clike",
+		"django"            => "markup-templating",
+		"ejs"               => array( "javascript", "markup-templating" ),
+		"erb"               => array( "ruby", "markup-templating" ),
+		"fsharp"            => "clike",
+		"flow"              => "javascript",
+		"glsl"              => "clike",
+		"gml"               => "clike",
+		"go"                => "clike",
+		"groovy"            => "clike",
+		"haml"              => "ruby",
+		"handlebars"        => "markup-templating",
+		"haxe"              => "clike",
+		"java"              => "clike",
+		"javadoc"           => array( "markup", "java", "javadoclike" ),
+		"jolie"             => "clike",
+		"jsdoc"             => array( "javascript", "javadoclike" ),
+		"js-extras"         => "javascript",
+		"js-templates"      => "javascript",
+		"jsonp"             => "json",
+		"json5"             => "json",
+		"kotlin"            => "clike",
+		"less"              => "css",
+		"lilypond"          => "scheme",
+		"markdown"          => "markup",
+		"markup-templating" => "markup",
+		"n4js"              => "javascript",
+		"nginx"             => "clike",
+		"objectivec"        => "c",
+		"opencl"            => "cpp",
+		"parser"            => "markup",
+		"php"               => array( "clike", "markup-templating" ),
+		"phpdoc"            => array( "php", "javadoclike" ),
+		"php-extras"        => "php",
+		"plsql"             => "sql",
+		"processing"        => "clike",
+		"protobuf"          => "clike",
+		"pug"               => array( "markup", "javascript" ),
+		"qore"              => "clike",
+		"jsx"               => array( "markup", "javascript" ),
+		"tsx"               => array( "jsx", "typescript" ),
+		"reason"            => "clike",
+		"ruby"              => "clike",
+		"sass"              => "css",
+		"scss"              => "css",
+		"scala"             => "java",
+		"shell-session"     => "bash",
+		"smarty"            => "markup-templating",
+		"soy"               => "markup-templating",
+		"swift"             => "clike",
+		"tap"               => "yaml",
+		"textile"           => "markup",
+		"tt2"               => array( "clike", "markup-templating" ),
+		"twig"              => "markup",
+		"typescript"        => "javascript",
+		"t4-cs"             => array( "t4-templating", "csharp" ),
+		"t4-vb"             => array( "t4-templating", "visual-basic" ),
+		"vala"              => "clike",
+		"vbnet"             => "basic",
+		"velocity"          => "markup",
+		"wiki"              => "markup",
+		"xeora"             => "markup",
+		"xquery"            => "markup",
+	);
+}

@@ -1,0 +1,17 @@
+/*
+ * Padding
+ */
+
++prefix-classes('mbcode-')
+
+	for num in (5..100)
+
+		if num % 5 == 0
+
+			.padding_tb-{num} code
+				padding-top (num)px
+				padding-bottom (num)px
+
+			.padding_lr-{num} code
+				padding-left (num)px
+				padding-right (num)px
