@@ -65,11 +65,11 @@ wp.blocks.registerBlockType<AttributesDefinition>(`${plugin_namespace}/code`, {
 		},
 		padding_tb: {
 			type: "number",
-			default: 35
+			default: 40
 		},
 		padding_lr: {
 			type: "number",
-			default: 25
+			default: 30
 		},
 		border_radius: {
 			type: "number",
