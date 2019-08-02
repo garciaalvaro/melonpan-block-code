@@ -3,21 +3,6 @@ const { BannerPlugin } = require("webpack");
 const path = require("path");
 const TerserJSPlugin = require("terser-webpack-plugin");
 
-const replace_loader = {
-	loader: "string-replace-loader",
-	options: {
-		search: /^([\S\s]*?\.languages)(\.|\[['"])([\w-]+)((['"]\])?\s?=[\S\s]+)/
-			.source,
-		replace: [
-			`wp.hooks.addAction( "mbcode.addPrismLanguage.$3", "addPrismLanguage", function() {`,
-			`\nif ( window.Prism && window.Prism.languages && window.Prism.languages["$3"] ) { return; }`,
-			`\n$1$2$3$4`,
-			`\n});\n`
-		].join(""),
-		flags: "g"
-	}
-};
-
 module.exports = [
 	{
 		entry: "./src/index-prism_languages.ts",
@@ -29,7 +14,22 @@ module.exports = [
 			rules: [
 				{
 					test: /\.js$/,
-					use: [replace_loader],
+					use: [
+						{
+							loader: "string-replace-loader",
+							options: {
+								search: /^([\S\s]*?\.languages)(\.|\[['"])([\w-]+)((['"]\])?\s?=[\S\s]+)/
+									.source,
+								replace: [
+									`wp.hooks.addAction( "mbcode.addPrismLanguage.$3", "addPrismLanguage", function() {`,
+									`\nif ( window.Prism && window.Prism.languages && window.Prism.languages["$3"] ) { return; }`,
+									`\n$1$2$3$4`,
+									`\n});\n`
+								].join(""),
+								flags: "g"
+							}
+						}
+					],
 					include: path.join(__dirname, "../node_modules/prismjs/components")
 				}
 			]
@@ -66,7 +66,23 @@ module.exports = [
 								outputPath: "prism_languages"
 							}
 						},
-						replace_loader
+						{
+							loader: "string-replace-loader",
+							options: {
+								search: /^([\S\s]*?\.languages)(\.|\[['"])([\w-]+)((['"]\])?\s?=[\S\s]+)/
+									.source,
+								replace: [
+									// BannerPlugin does not add the banner when using file-loader ouputPath.
+									`/*! ${description} | ${version} | ${homepage} */`,
+									` /*! Prism | https://github.com/PrismJS/prism/ | Lea Verou | MIT License */`,
+									`\nwp.hooks.addAction( "mbcode.addPrismLanguage.$3", "addPrismLanguage", function() {`,
+									`\nif ( window.Prism && window.Prism.languages && window.Prism.languages["$3"] ) { return; }`,
+									`\n$1$2$3$4`,
+									`\n});\n`
+								].join(""),
+								flags: "g"
+							}
+						}
 					],
 					include: path.join(__dirname, "../node_modules/prismjs/components")
 				}
@@ -74,16 +90,6 @@ module.exports = [
 		},
 		optimization: {
 			minimizer: [new TerserJSPlugin({})]
-		},
-		plugins: [
-			new BannerPlugin({
-				banner: [
-					`/*! ${description} | ${version} | ${homepage} */`,
-					"/*! Prism | https://github.com/PrismJS/prism/ | Lea Verou | MIT License */"
-				].join(""),
-				raw: true,
-				include: new RegExp(/.*?\.js/)
-			})
-		]
+		}
 	}
 ];
