@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Melonpan Block - Code
  * Plugin URI: https://wordpress.org/plugins/melonpan-block-code/
- * Description: Code block with highlighted syntax, that can be copied to the clipboard.
+ * Description: Block to display code, with highlighted syntax, which can be copied to the clipboard.
  * Author: melonpan
  * Version: 1.0.0
  * License: GPL3+

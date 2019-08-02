@@ -1,6 +1,6 @@
 === Melonpan Block - Code ===
 Contributors: melonpan
-Tags: syntax-highlighting prism block block-editor code gutenberg
+Tags: syntax-highlighting, prism, block, block-editor, code, gutenberg
 Requires at least: 5.2
 Tested up to: 5.2
 Stable tag: 1.0.0
@@ -8,7 +8,7 @@ Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Code block with highlighted syntax, that can be copied to the clipboard.
+Block to display code, with highlighted syntax, which can be copied to the clipboard.
 
 
 == Description ==
