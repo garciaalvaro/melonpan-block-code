@@ -2,7 +2,7 @@
 	"name": "melonpan-block-code",
 	"version": "1.0.0",
 	"description": "Melonpan Block Code WordPress Plugin",
-	"homepage": "#",
+	"homepage": "https://wordpress.org/plugins/melonpan-block-code/",
 	"scripts": {
 		"prism_themes": "webpack --mode production --config ./.webpack/prism_themes.config.babel.js && rm build/_temp.js",
 		"prism_lang": "webpack --mode production --config ./.webpack/prism_lang.config.babel.js && rm build/_temp.js",
@@ -27,7 +27,7 @@
 		"@babel/preset-typescript": "^7.3.3",
 		"@babel/register": "^7.5.5",
 		"@types/lodash": "^4.14.136",
-		"@types/node": "^12.6.8",
+		"@types/node": "^12.6.9",
 		"@types/prismjs": "^1.16.0",
 		"@types/react-dom": "^16.8.5",
 		"@types/react-select": "^3.0.0",
@@ -53,7 +53,7 @@
 		"stylus": "^0.54.5",
 		"stylus-loader": "^3.0.2",
 		"typescript": "^3.5.3",
-		"webpack": "^4.38.0",
+		"webpack": "^4.39.0",
 		"webpack-cli": "^3.3.6"
 	}
 }

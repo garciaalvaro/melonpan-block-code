@@ -1,6 +1,6 @@
 === Melonpan Block - Code ===
 Contributors: melonpan
-Tags:
+Tags: syntax-highlighting prism block block-editor code gutenberg
 Requires at least: 5.2
 Tested up to: 5.2
 Stable tag: 1.0.0
@@ -16,10 +16,10 @@ Code block with highlighted syntax, that can be copied to the clipboard.
 Code block with highlighted syntax, that can be copied to the clipboard.
 The block comes with the following settings:
 
-* Code language: JavaScript, CSS, PHP, etc.
+* Code language: JavaScript, CSS, PHP, etc. [Full list of languages](https://prismjs.com/#languages-list).
 * Color theme
-* Label
-* Copy button
+* Label: Top left label, can be customized, by default the code language.
+* Copy button: Top right button to copy the block content.
 * Padding
 * Border width and Border radius
 
@@ -28,6 +28,7 @@ The block comes with the following settings:
 
 The block can be found inside the blocks inserter menu under the *Melonpan Blocks* category.
 Once added in the post you can edit its settings on the Editor sidebar under the Block settings panel.
+Switch between the previewer and editor views to edit the code and see its styled output.
 
 
 == Installation ==
@@ -45,3 +46,8 @@ Installation from the WordPress admin.
 
 = 1.0.0 =
 * Initial release.
+
+
+== Screenshots ==
+
+1. Block edit panel.
