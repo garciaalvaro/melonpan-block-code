@@ -1,1 +1,1 @@
-import "./js/front";
+import "./front";

@@ -17,9 +17,9 @@
 		"jsx": "react",
 		"baseUrl": ".",
 		"paths": {
-			"Components/*": ["src/js/Components/*"],
-			"utils/*": ["src/js/utils/*"],
-			"init/*": ["src/js/init/*"]
+			"Components/*": ["src/Components/*"],
+			"utils/*": ["src/utils/*"],
+			"init/*": ["src/init/*"]
 		},
 		// https://stackoverflow.com/a/52404148 | CC BY-SA 3.0
 		"skipLibCheck": true

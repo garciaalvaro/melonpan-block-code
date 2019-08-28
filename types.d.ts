@@ -21,8 +21,11 @@ interface Object {
 	[key: string]: any;
 }
 
-// https://stackoverflow.com/a/49286056 | CC BY-SA 3.0
-type ValueOf<T> = T[keyof T];
+interface ComponentProps extends Object {
+	children?: React.ReactNode;
+	id?: string | null;
+	className?: string | null | (string | null)[] | undefined;
+}
 
 interface Attributes {
 	language: string | undefined;
@@ -40,13 +43,11 @@ interface Attributes {
 	border_radius: number;
 }
 
-interface AttributesDefinition extends Record<keyof Attributes, any> {}
-
-interface BlockPropsSave {
+interface SaveProps {
 	attributes: Attributes;
 }
 
-interface BlockPropsEdit {
+interface EditProps {
 	className: string;
 	attributes: Attributes;
 	setAttributes: Function;

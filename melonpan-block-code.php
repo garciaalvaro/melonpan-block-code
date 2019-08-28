@@ -31,5 +31,5 @@ require_once INC_DIR . 'utils-castArray.php';
 require_once INC_DIR . 'utils-generateLangDepName.php';
 require_once INC_DIR . 'utils-getLangDependenciesData.php';
 require_once INC_DIR . 'utils-getLangDependencies.php';
-require_once INC_DIR . 'enqueue.php';
-require_once INC_DIR . 'block_render.php';
+require_once INC_DIR . 'register-enqueue.php';
+require_once INC_DIR . 'register-block_render.php';
