@@ -3,7 +3,7 @@ import { ValueType } from "react-select/src/types";
 
 import { Div, Span } from "utils/Components";
 import { addPrefix } from "utils/tools";
-import { pr, languages, Language } from "utils/data";
+import { plugin_prefix, languages, Language } from "utils/data";
 
 const { __ } = wp.i18n;
 const { BaseControl } = wp.components;
@@ -61,7 +61,7 @@ export const ControlLanguage: React.ComponentType<EditProps> = props => {
 			>
 				<ReactSelect
 					className={addPrefix("control-react_select")}
-					classNamePrefix={pr}
+					classNamePrefix={plugin_prefix}
 					value={selected}
 					onChange={onChange}
 					options={options}

@@ -1,9 +1,9 @@
 export {
 	block_category,
 	plugin_namespace,
-	pr,
-	plugin_title,
-	plugin_description,
+	plugin_prefix,
+	block_title,
+	block_description,
 	block_name
 } from "./plugin";
 export { icons, Icons } from "./icons";

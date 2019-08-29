@@ -3,7 +3,7 @@ import { ValueType } from "react-select/src/types";
 
 import { Div } from "utils/Components";
 import { addPrefix } from "utils/tools";
-import { pr, themes, Theme } from "utils/data";
+import { plugin_prefix, themes, Theme } from "utils/data";
 
 const { __ } = wp.i18n;
 const { BaseControl } = wp.components;
@@ -26,7 +26,7 @@ export const ControlTheme: React.ComponentType<EditProps> = props => {
 			>
 				<ReactSelect
 					className={addPrefix("control-react_select")}
-					classNamePrefix={pr}
+					classNamePrefix={plugin_prefix}
 					value={selected}
 					onChange={(selected: ValueType<Theme>) => {
 						if (!selected) {

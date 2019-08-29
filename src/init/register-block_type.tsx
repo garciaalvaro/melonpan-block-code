@@ -1,7 +1,7 @@
 import {
 	block_category,
-	plugin_title,
-	plugin_description,
+	block_title,
+	block_description,
 	block_name
 } from "utils/data";
 import { Icon } from "utils/Components";
@@ -12,10 +12,10 @@ import { BlockContent } from "Components/BlockContent/BlockContent";
 interface AttributesDefinition extends Record<keyof Attributes, any> {}
 
 wp.blocks.registerBlockType<AttributesDefinition>(block_name, {
-	title: plugin_title,
+	title: block_title,
 	icon: () => <Icon icon="logo" />,
 	category: block_category,
-	description: plugin_description,
+	description: block_description,
 	supports: {
 		align: true
 	},
