@@ -1,6 +1,6 @@
 export type Language = { label: string; value: string; common: boolean };
 
-export const languages = [
+export const languages: Language[] = [
 	{ value: "css", label: "CSS", common: true },
 	{ value: "markup", label: "HTML, XML, Markup", common: true },
 	{ value: "javascript", label: "JavaScript", common: true },
