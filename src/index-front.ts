@@ -1,3 +1,3 @@
-import "./Components/BlockContainer/*.styl";
-import "./Components/BlockContent/*.styl";
+import "./Components/BlockContainer/BlockContainer.styl";
+import "./Components/BlockContent/BlockContent.styl";
 import "./front";
