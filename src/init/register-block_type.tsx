@@ -1,3 +1,5 @@
+import { registerBlockType } from "@wordpress/blocks";
+
 import {
 	block_category,
 	block_title,
@@ -11,7 +13,7 @@ import { BlockContent } from "Components/BlockContent/BlockContent";
 
 interface AttributesDefinition extends Record<keyof Attributes, any> {}
 
-wp.blocks.registerBlockType<AttributesDefinition>(block_name, {
+registerBlockType<AttributesDefinition>(block_name, {
 	title: block_title,
 	icon: () => <Icon icon="logo" />,
 	category: block_category,

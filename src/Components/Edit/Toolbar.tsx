@@ -1,6 +1,6 @@
-const { __ } = wp.i18n;
-const { IconButton, Toolbar: ToolbarImp } = wp.components;
-const { BlockControls } = wp.blockEditor;
+import { __ } from "@wordpress/i18n";
+import { IconButton, Toolbar as ToolbarImp } from "@wordpress/components";
+import { BlockControls } from "@wordpress/block-editor";
 
 export const Toolbar: React.ComponentType<EditProps> = props => {
 	const { setAttributes, attributes } = props;

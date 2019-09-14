@@ -1,9 +1,9 @@
+import { __ } from "@wordpress/i18n";
+import { useCallback } from "@wordpress/element";
+import { BaseControl, ToggleControl } from "@wordpress/components";
+
 import { Div } from "utils/Components";
 import { addPrefix } from "utils/tools";
-
-const { __ } = wp.i18n;
-const { useCallback } = wp.element;
-const { BaseControl, ToggleControl } = wp.components;
 
 export const ControlCopyButton: React.ComponentType<EditProps> = props => {
 	const { attributes, setAttributes } = props;

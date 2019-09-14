@@ -1,10 +1,15 @@
+import { __ } from "@wordpress/i18n";
+import { useCallback } from "@wordpress/element";
+import {
+	BaseControl,
+	ToggleControl,
+	TextControl,
+	RadioControl
+} from "@wordpress/components";
+
 import { Div } from "utils/Components";
 import { addPrefix } from "utils/tools";
 import { languages } from "utils/data";
-
-const { __ } = wp.i18n;
-const { useCallback } = wp.element;
-const { BaseControl, ToggleControl, TextControl, RadioControl } = wp.components;
 
 export const ControlLanguageLabel: React.ComponentType<EditProps> = props => {
 	const { attributes, setAttributes } = props;

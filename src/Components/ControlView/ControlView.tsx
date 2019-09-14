@@ -1,8 +1,9 @@
+import { __ } from "@wordpress/i18n";
+import { BaseControl, ButtonGroup } from "@wordpress/components";
+
 import { Div, Button } from "utils/Components";
 import { addPrefix } from "utils/tools";
 
-const { __ } = wp.i18n;
-const { BaseControl, ButtonGroup } = wp.components;
 const buttons = [
 	{ value: "editor", label: __("Editor") },
 	{ value: "previewer", label: __("Previewer") }

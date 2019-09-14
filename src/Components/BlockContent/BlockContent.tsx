@@ -1,11 +1,11 @@
+import { __ } from "@wordpress/i18n";
+import { Fragment } from "@wordpress/element";
+
 import { Div, Pre, Span, Code, Button } from "utils/Components";
 
 interface Props extends SaveProps {
 	highlighted_content?: string;
 }
-
-const { __ } = wp.i18n;
-const { Fragment } = wp.element;
 
 export const BlockContent: React.ComponentType<Props> = props => {
 	const { highlighted_content, attributes } = props;

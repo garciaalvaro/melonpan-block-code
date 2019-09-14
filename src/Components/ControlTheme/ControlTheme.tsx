@@ -1,13 +1,12 @@
 import ReactSelect from "react-select";
 import { ValueType } from "react-select/src/types";
+import { __ } from "@wordpress/i18n";
+import { BaseControl } from "@wordpress/components";
+import { useState } from "@wordpress/element";
 
 import { Div } from "utils/Components";
 import { addPrefix } from "utils/tools";
 import { plugin_prefix, themes, Theme } from "utils/data";
-
-const { __ } = wp.i18n;
-const { BaseControl } = wp.components;
-const { useState } = wp.element;
 
 export const ControlTheme: React.ComponentType<EditProps> = props => {
 	const { attributes, setAttributes } = props;

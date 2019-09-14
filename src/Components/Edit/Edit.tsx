@@ -1,4 +1,8 @@
 import Prism from "prismjs";
+import { __ } from "@wordpress/i18n";
+import { PlainText } from "@wordpress/block-editor";
+import { useEffect, useState, useCallback } from "@wordpress/element";
+import { doAction } from "@wordpress/hooks";
 
 import { themes } from "utils/data";
 import { getLangDependencies } from "utils/tools";
@@ -6,10 +10,6 @@ import { Sidebar } from "./Sidebar";
 import { Toolbar } from "./Toolbar";
 import { BlockContainer } from "../BlockContainer/BlockContainer";
 import { BlockContent } from "../BlockContent/BlockContent";
-
-const { __ } = wp.i18n;
-const { PlainText } = wp.blockEditor;
-const { useEffect, useState, useCallback } = wp.element;
 
 export const Edit: React.ComponentType<EditProps> = props => {
 	const { setAttributes, attributes } = props;
@@ -40,7 +40,7 @@ export const Edit: React.ComponentType<EditProps> = props => {
 		const dependencies = getLangDependencies(language);
 
 		[...dependencies, language].forEach(lang =>
-			wp.hooks.doAction(`mbcode.addPrismLanguage.${lang}`)
+			doAction(`mbcode.addPrismLanguage.${lang}`)
 		);
 
 		setHighlightedContent(

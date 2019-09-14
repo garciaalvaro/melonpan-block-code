@@ -1,3 +1,5 @@
+import { InspectorControls } from "@wordpress/block-editor";
+
 import { Div } from "utils/Components";
 import { ControlView } from "../ControlView/ControlView";
 import { ControlLanguage } from "../ControlLanguage/ControlLanguage";
@@ -6,8 +8,6 @@ import { ControlCopyButton } from "../ControlCopyButton/ControlCopyButton";
 import { ControlLanguageLabel } from "../ControlLabel/ControlLabel";
 import { ControlPadding } from "../ControlPadding/ControlPadding";
 import { ControlBorder } from "../ControlBorder/ControlBorder";
-
-const { InspectorControls } = wp.blockEditor;
 
 export const Sidebar: React.ComponentType<EditProps> = props => {
 	return (

@@ -1,5 +1,8 @@
 import copy from "copy-text-to-clipboard";
 import Prism from "prismjs";
+import { decodeEntities } from "@wordpress/html-entities";
+import { __ } from "@wordpress/i18n";
+import { doAction } from "@wordpress/hooks";
 
 import { getLangDependencies } from "utils/tools/getLangDependencies";
 
@@ -37,12 +40,12 @@ export class MelonpanBlockCode {
 				return;
 			}
 
-			copy(wp.htmlEntities.decodeEntities(this.content));
+			copy(decodeEntities(this.content));
 
 			const button_html = this.button.innerHTML;
 
 			this.button.classList.add("mbcode-just-copied");
-			this.button.innerHTML = `<span>${wp.i18n.__("Copied")}</span>`;
+			this.button.innerHTML = `<span>${__("Copied")}</span>`;
 
 			setTimeout(() => {
 				if (!this.button) {
@@ -71,7 +74,7 @@ export class MelonpanBlockCode {
 		const dependencies = getLangDependencies(language);
 
 		[...dependencies, language].forEach(lang =>
-			wp.hooks.doAction(`mbcode.addPrismLanguage.${lang}`)
+			doAction(`mbcode.addPrismLanguage.${lang}`)
 		);
 
 		const highlighted_content = Prism.highlight(

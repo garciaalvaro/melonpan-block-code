@@ -1,13 +1,12 @@
 import ReactSelect from "react-select";
 import { ValueType } from "react-select/src/types";
+import { __ } from "@wordpress/i18n";
+import { BaseControl } from "@wordpress/components";
+import { useState, useCallback } from "@wordpress/element";
 
 import { Div, Span } from "utils/Components";
 import { addPrefix } from "utils/tools";
 import { plugin_prefix, languages, Language } from "utils/data";
-
-const { __ } = wp.i18n;
-const { BaseControl } = wp.components;
-const { useState, useCallback } = wp.element;
 
 const options = [
 	{
