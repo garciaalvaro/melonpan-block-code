@@ -4,7 +4,7 @@ module.exports = [
 	{
 		entry: __dirname + "/copy.entry.js",
 		output: {
-			path: __dirname + "/../_extras/release",
+			path: __dirname + "/../_release",
 			filename: "_temp.js"
 		},
 		plugins: [
@@ -15,6 +15,7 @@ module.exports = [
 						".*",
 						".*/**",
 						"_extras/**",
+						"_release/**",
 						"_temp.js",
 						"enzyme.config.js",
 						"jest*",
