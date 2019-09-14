@@ -7,7 +7,7 @@ const nib = require("nib");
 
 module.exports = [
 	{
-		entry: "./src/index-prism_themes.ts",
+		entry: "./src/index-prism_themes.styl",
 		output: {
 			path: __dirname + "/../build",
 			filename: "_temp.js"

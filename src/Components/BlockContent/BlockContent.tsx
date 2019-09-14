@@ -1,6 +1,7 @@
 import { __ } from "@wordpress/i18n";
 import { Fragment } from "@wordpress/element";
 
+import "./BlockContent.styl";
 import { Div, Pre, Span, Code, Button } from "utils/Components";
 
 interface Props extends SaveProps {

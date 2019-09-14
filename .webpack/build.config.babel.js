@@ -7,8 +7,8 @@ const nib = require("nib");
 
 export default {
 	entry: {
-		front: ["./src/index-front.ts", "./src/index-front.styl"],
-		editor: ["./src/index-editor.ts", "./src/index-editor.styl"]
+		front: "./src/index-front.ts",
+		editor: "./src/index-editor.ts"
 	},
 	output: {
 		path: __dirname + "/../build",

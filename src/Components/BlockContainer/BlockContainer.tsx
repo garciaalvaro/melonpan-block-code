@@ -1,5 +1,7 @@
 import { Div } from "utils/Components";
 
+import "./BlockContainer.styl";
+
 interface Props extends SaveProps {
 	children: React.ReactNode;
 	className?: string;

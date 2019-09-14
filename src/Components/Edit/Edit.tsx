@@ -4,6 +4,7 @@ import { PlainText } from "@wordpress/block-editor";
 import { useEffect, useState, useCallback } from "@wordpress/element";
 import { doAction } from "@wordpress/hooks";
 
+import "./Edit.styl";
 import { themes } from "utils/data";
 import { getLangDependencies } from "utils/tools";
 import { Sidebar } from "./Sidebar";

@@ -1,5 +1,6 @@
 import { InspectorControls } from "@wordpress/block-editor";
 
+import "./Sidebar.styl";
 import { Div } from "utils/Components";
 import { ControlView } from "../ControlView/ControlView";
 import { ControlLanguage } from "../ControlLanguage/ControlLanguage";
