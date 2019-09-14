@@ -1,4 +1,4 @@
-import { Icons, icons } from "utils/data";
+import { Icons, icons } from "utils/data/icons";
 
 interface Props {
 	icon: keyof Icons;
