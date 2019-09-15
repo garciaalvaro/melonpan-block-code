@@ -23,6 +23,8 @@ The block comes with the following settings:
 * Padding
 * Border width and Border radius
 
+[GitHub repository](https://github.com/garciaalvaro/melonpan-block-code)
+
 
 == Usage ==
 
@@ -50,4 +52,4 @@ Installation from the WordPress admin.
 
 == Screenshots ==
 
-1. Block edit panel.
+1. Block settings panel.
