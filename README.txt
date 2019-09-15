@@ -46,6 +46,9 @@ Installation from the WordPress admin.
 
 == Changelog ==
 
+= 1.0.1 =
+* Improved code base.
+
 = 1.0.0 =
 * Initial release.
 
