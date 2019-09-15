@@ -18,7 +18,7 @@ The block comes with the following settings:
 
 * Code language: JavaScript, CSS, PHP, etc. [Full list of languages](https://prismjs.com/#languages-list).
 * Color theme
-* Label: Top left label, can be customized, by default the code language.
+* Label: Top left label that can be customized. By default the code language.
 * Copy button: Top right button to copy the block content.
 * Padding
 * Border width and Border radius
