@@ -17,6 +17,7 @@ module.exports = [
 						"_extras/**",
 						"_release/**",
 						"_temp.js",
+						"assets-repo/**",
 						"enzyme.config.js",
 						"jest*",
 						"node_modules/**",
