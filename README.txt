@@ -13,17 +13,21 @@ Block to display code, with highlighted syntax, which can be copied to the clipb
 
 == Description ==
 
-Code block with highlighted syntax, that can be copied to the clipboard.
+[Demo](https://gutenberg-showcase.melonpan.io/melonpan-block-code) - [Documentation](https://melonpan.io/wordpress-plugins/melonpan-block-code) - [GitHub](https://github.com/garciaalvaro/melonpan-block-code)
+
+Block to display code, with highlighted syntax, which can be copied to the clipboard.
+
+
+== Features ==
+
 The block comes with the following settings:
 
-* Code language: JavaScript, CSS, PHP, etc. [Full list of languages](https://prismjs.com/#languages-list).
-* Color theme
-* Label: Top left label that can be customized. By default the code language.
-* Copy button: Top right button to copy the block content.
-* Padding
-* Border width and Border radius
-
-[GitHub repository](https://github.com/garciaalvaro/melonpan-block-code)
+* **Code language**: JavaScript, CSS, PHP, etc. [Full list of languages](https://prismjs.com/#languages-list).
+* **Color theme**
+* **Label**: Top left label that can be customized. By default the code language.
+* **Copy button**: Top right button to copy the block content.
+* **Padding**
+* **Border width** and **Border radius**
 
 
 == Usage ==
