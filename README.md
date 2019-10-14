@@ -8,6 +8,8 @@
 
 Block to display code, with highlighted syntax, which can be copied to the clipboard.
 
+<br />
+
 ## Features
 
 The block comes with the following settings:
