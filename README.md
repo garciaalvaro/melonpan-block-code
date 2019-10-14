@@ -2,6 +2,10 @@
 
 # Melonpan Block - Code
 
+[Demo](https://gutenberg-showcase.melonpan.io/melonpan-block-code) - [Documentation](https://melonpan.io/wordpress-plugins/melonpan-block-code) - [WordPress](https://wordpress.org/plugins/melonpan-block-code)
+
+<br />
+
 Block to display code, with highlighted syntax, which can be copied to the clipboard.
 
 ## Features
@@ -18,9 +22,3 @@ The block comes with the following settings:
 <br />
 
 <img src="assets-repo/screenshot-1.png" width="700px" alt="Block settings panel" />
-
-<br />
-
----
-
-This plugin can be downloaded from the [WordPress repository](https://wordpress.org/plugins/melonpan-block-code/).
