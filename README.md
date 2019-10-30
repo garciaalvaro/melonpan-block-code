@@ -23,4 +23,4 @@ The block comes with the following settings:
 
 <br />
 
-<img src="assets-repo/screenshot-1.png" width="700px" alt="Block settings panel" />
+<img src="assets-repo/screenshot-1.jpg" width="700px" alt="Block settings panel" />
