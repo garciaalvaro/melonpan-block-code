@@ -31,7 +31,6 @@
 			outline none
 
 	#mbcode-controls
-		margin -16px
 		padding 16px 16px 85px
 		position relative
 
@@ -66,6 +65,9 @@
 
 #mbcode-controls
 
+	.components-panel__body.is-opened &
+		margin -16px
+
 	.mbcode-control-react_select
 
 		.mbcode__control
@@ -80,6 +82,7 @@
 	.components-base-control__label
 		font-weight 600
 		margin-bottom 1.5em
+		display block
 
 	.components-base-control__help
 		font-style normal
