@@ -1,9 +1,9 @@
-const { name, version, description, homepage } = require("../package.json");
-const { BannerPlugin } = require("webpack");
-const path = require("path");
-const TerserJSPlugin = require("terser-webpack-plugin");
+import { name, version, description, homepage } from "../package.json";
+import { BannerPlugin } from "webpack";
+import TerserJSPlugin from "terser-webpack-plugin";
+import path from "path";
 
-module.exports = [
+export default [
 	{
 		entry: "./src/index-prism_languages.ts",
 		output: {

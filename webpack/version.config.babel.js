@@ -1,14 +1,15 @@
-const { name, version } = require("../package.json");
+import { name, version } from "../package.json";
+
 const getReplace = (search, replace) => ({
 	loader: "string-replace-loader",
 	options: {
-		search: search,
-		replace: replace,
+		search,
+		replace,
 		flags: "gm"
 	}
 });
 
-module.exports = [
+export default [
 	{
 		entry: __dirname + "/version.entry.js",
 		output: {
