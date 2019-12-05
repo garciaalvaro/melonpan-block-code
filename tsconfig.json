@@ -25,6 +25,6 @@
 		"skipLibCheck": true
 	},
 	"include": ["src", "types.d.ts"],
-	"exclude": ["node_modules", ".webpack/*"],
+	"exclude": ["node_modules"],
 	"compileOnSave": false
 }
