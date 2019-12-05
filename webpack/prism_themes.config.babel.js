@@ -1,15 +1,15 @@
-const { name, version, description, homepage } = require("../package.json");
-const webpack = require("webpack");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const BannerPlugin = webpack.BannerPlugin;
-const nib = require("nib");
+import { name, version, description, homepage } from "../package.json";
+import { BannerPlugin } from "webpack";
+import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import nib from "nib";
+import path from "path";
 
-module.exports = [
+export default [
 	{
-		entry: "./src/index-prism_themes.ts",
+		entry: path.join(__dirname, "../src/index-prism_themes.ts"),
 		output: {
-			path: __dirname + "/../build",
+			path: path.join(__dirname, "../build"),
 			filename: "_temp.js"
 		},
 		module: {
@@ -46,9 +46,9 @@ module.exports = [
 		}
 	},
 	{
-		entry: "./src/index-prism_themes.ts",
+		entry: path.join(__dirname, "../src/index-prism_themes.ts"),
 		output: {
-			path: __dirname + "/../build",
+			path: path.join(__dirname, "../build"),
 			filename: "_temp.js"
 		},
 		module: {
