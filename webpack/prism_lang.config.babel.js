@@ -5,9 +5,9 @@ import path from "path";
 
 export default [
 	{
-		entry: "./src/index-prism_languages.ts",
+		entry: path.join(__dirname, "../src/index-prism_languages.ts"),
 		output: {
-			path: __dirname + "/../build",
+			path: path.join(__dirname, "../build"),
 			filename: `${name}-prism_languages.js`
 		},
 		module: {
@@ -49,9 +49,9 @@ export default [
 		]
 	},
 	{
-		entry: "./src/index-prism_languages.ts",
+		entry: path.join(__dirname, "../src/index-prism_languages.ts"),
 		output: {
-			path: __dirname + "/../build",
+			path: path.join(__dirname, "../build"),
 			filename: "_temp.js"
 		},
 		module: {

@@ -3,12 +3,13 @@ import { BannerPlugin } from "webpack";
 import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import nib from "nib";
+import path from "path";
 
 export default [
 	{
-		entry: "./src/index-prism_themes.ts",
+		entry: path.join(__dirname, "../src/index-prism_themes.ts"),
 		output: {
-			path: __dirname + "/../build",
+			path: path.join(__dirname, "../build"),
 			filename: "_temp.js"
 		},
 		module: {
@@ -45,9 +46,9 @@ export default [
 		}
 	},
 	{
-		entry: "./src/index-prism_themes.ts",
+		entry: path.join(__dirname, "../src/index-prism_themes.ts"),
 		output: {
-			path: __dirname + "/../build",
+			path: path.join(__dirname, "../build"),
 			filename: "_temp.js"
 		},
 		module: {
