@@ -50,7 +50,6 @@
 		"@typescript-eslint/eslint-plugin": "^3.0.0",
 		"@typescript-eslint/parser": "^3.0.0",
 		"@wordpress/browserslist-config": "^2.6.0",
-		"babel-eslint": "^10.1.0",
 		"babel-loader": "^8.0.6",
 		"browserslist": "^4.12.0",
 		"clean-webpack-plugin": "^3.0.0",

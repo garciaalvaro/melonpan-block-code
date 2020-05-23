@@ -1,14 +1,5 @@
 module.exports = {
-	// For type definition files we use the TypeScript parser,
-	// as babel parser doesn't seem to work correctly.
-	overrides: [
-		{
-			parser: "@typescript-eslint/parser",
-			files: ["*.d.ts"],
-		},
-	],
-
-	parser: "babel-eslint",
+	parser: "@typescript-eslint/parser",
 
 	extends: [
 		"eslint:recommended",
