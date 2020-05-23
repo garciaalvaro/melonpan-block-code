@@ -3,13 +3,18 @@ import { BannerPlugin } from "webpack";
 import TerserJSPlugin from "terser-webpack-plugin";
 import path from "path";
 
+const SRC_DIR = path.join(__dirname, "../src");
+const BUILD_DIR = path.join(__dirname, "../build");
+
 export default [
 	{
-		entry: path.join(__dirname, "../src/index-prism_languages.ts"),
+		entry: SRC_DIR + "/index-prism_languages.ts",
+
 		output: {
-			path: path.join(__dirname, "../build"),
+			path: BUILD_DIR,
 			filename: `${name}-prism_languages.js`,
 		},
+
 		module: {
 			rules: [
 				{
@@ -37,9 +42,11 @@ export default [
 				},
 			],
 		},
+
 		optimization: {
 			minimizer: [new TerserJSPlugin({})],
 		},
+
 		plugins: [
 			new BannerPlugin({
 				banner: [
@@ -51,12 +58,15 @@ export default [
 			}),
 		],
 	},
+
 	{
-		entry: path.join(__dirname, "../src/index-prism_languages.ts"),
+		entry: SRC_DIR + "/index-prism_languages.ts",
+
 		output: {
-			path: path.join(__dirname, "../build"),
+			path: BUILD_DIR,
 			filename: "_temp.js",
 		},
+
 		module: {
 			rules: [
 				{
@@ -94,6 +104,7 @@ export default [
 				},
 			],
 		},
+
 		optimization: {
 			minimizer: [new TerserJSPlugin({})],
 		},

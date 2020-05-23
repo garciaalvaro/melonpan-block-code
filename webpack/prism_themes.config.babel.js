@@ -5,13 +5,18 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import nib from "nib";
 import path from "path";
 
+const SRC_DIR = path.join(__dirname, "../src");
+const BUILD_DIR = path.join(__dirname, "../build");
+
 export default [
 	{
-		entry: path.join(__dirname, "../src/index-prism_themes.ts"),
+		entry: SRC_DIR + "/index-prism_themes.ts",
+
 		output: {
-			path: path.join(__dirname, "../build"),
+			path: BUILD_DIR,
 			filename: "_temp.js",
 		},
+
 		module: {
 			rules: [
 				{
@@ -24,6 +29,7 @@ export default [
 								outputPath: "prism_themes",
 							},
 						},
+
 						{
 							loader: "stylus-loader",
 							options: {
@@ -35,6 +41,7 @@ export default [
 				},
 			],
 		},
+
 		optimization: {
 			minimizer: [
 				new OptimizeCSSAssetsPlugin({
@@ -45,12 +52,15 @@ export default [
 			],
 		},
 	},
+
 	{
-		entry: path.join(__dirname, "../src/index-prism_themes.ts"),
+		entry: SRC_DIR + "/index-prism_themes.ts",
+
 		output: {
-			path: path.join(__dirname, "../build"),
+			path: BUILD_DIR,
 			filename: "_temp.js",
 		},
+
 		module: {
 			rules: [
 				{
@@ -69,15 +79,18 @@ export default [
 				},
 			],
 		},
+
 		plugins: [
 			new MiniCssExtractPlugin({
 				filename: `${name}-prism_themes.css`,
 			}),
+
 			new BannerPlugin({
 				banner: `${description} | ${version} | ${homepage}`,
 				include: new RegExp(/.*?\.css/),
 			}),
 		],
+
 		optimization: {
 			minimizer: [
 				new OptimizeCSSAssetsPlugin({

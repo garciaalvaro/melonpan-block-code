@@ -3,14 +3,17 @@ import path from "path";
 
 export default {
 	entry: path.join(__dirname, "copy.entry.js"),
+
 	output: {
 		path: path.join(__dirname, "../_release"),
 		filename: "_temp.js",
 	},
+
 	plugins: [
 		new CopyPlugin([
 			{
 				from: "**/*",
+
 				ignore: [
 					".*",
 					".*/**",

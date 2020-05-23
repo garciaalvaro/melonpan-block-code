@@ -6,22 +6,29 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import nib from "nib";
 import path from "path";
 
+const SRC_DIR = path.join(__dirname, "../src");
+const BUILD_DIR = path.join(__dirname, "../build");
+
 export default {
 	entry: {
-		front: path.join(__dirname, "../src/index-front.ts"),
-		editor: path.join(__dirname, "../src/index-editor.ts"),
+		fromt: SRC_DIR + "/index-fromt.ts",
+		editor: SRC_DIR + "/index-editor.ts",
 	},
+
 	output: {
-		path: path.join(__dirname, "../build"),
+		path: BUILD_DIR,
 		filename: `${name}-[name].js`,
 	},
+
 	resolve: {
 		alias: {
-			Components: path.join(__dirname, "../src/Components"),
-			utils: path.join(__dirname, "../src/utils"),
-			init: path.join(__dirname, "../src/init"),
+			Components: SRC_DIR + "/Components",
+			utils: SRC_DIR + "/utils",
+			init: SRC_DIR + "/init",
 		},
 	},
+
+	// The following global variables are loaded by Gutenberg
 	externals: {
 		lodash: "lodash",
 		react: "React",
@@ -36,21 +43,25 @@ export default {
 		"@wordpress/html-entities": "wp.htmlEntities",
 		"@wordpress/i18n": "wp.i18n",
 	},
+
 	module: {
 		rules: [
 			{
 				test: /\.tsx?$/,
 				exclude: /node_modules/,
-				loader: "babel-loader",
+				use: "babel-loader",
 				resolve: {
 					extensions: [".tsx", ".ts", ".js", ".jsx"],
 				},
 			},
+
 			{
 				test: /\.(css|styl)$/,
 				use: [
 					MiniCssExtractPlugin.loader,
+
 					"css-loader",
+
 					{
 						loader: "stylus-loader",
 						options: {
@@ -62,14 +73,17 @@ export default {
 			},
 		],
 	},
+
 	plugins: [
 		new DefinePlugin({
 			// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 			l: (...args) => console.log(...args),
 		}),
+
 		new MiniCssExtractPlugin({
 			filename: `${name}-[name].css`,
 		}),
+
 		new BannerPlugin({
 			banner: [
 				`/*! ${description} | ${version} | ${homepage} */`,
@@ -79,11 +93,13 @@ export default {
 			raw: true,
 			include: new RegExp(/.*?\.js/),
 		}),
+
 		new BannerPlugin({
 			banner: `${description} | ${version} | ${homepage}`,
 			include: new RegExp(/.*?\.css/),
 		}),
 	],
+
 	optimization: {
 		minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
 	},
