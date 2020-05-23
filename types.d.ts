@@ -3,7 +3,12 @@
 declare const l: (log: any) => void;
 
 // Lodash
+// Gutenberg exposes a global variable with lodash
 declare const lodash: typeof import("lodash");
+
+// React
+// Gutenberg exposes a global variable with React
+declare const React: typeof import("react");
 
 // Wordpress
 declare const wp: {
