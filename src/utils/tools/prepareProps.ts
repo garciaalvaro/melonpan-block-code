@@ -1,6 +1,11 @@
 import { addPrefix } from "./addPrefix";
 
-export const prepareProps = (props: ComponentProps): ComponentProps => {
+interface ComponentPropsPrepared extends ComponentProps {
+	id?: string;
+	className?: string;
+}
+
+export const prepareProps = (props: ComponentProps): ComponentPropsPrepared => {
 	const { id, className, ...rest } = props;
 
 	return {

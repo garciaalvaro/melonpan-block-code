@@ -21,19 +21,22 @@ export const ControlLanguageLabel: React.ComponentType<EditProps> = props => {
 			}),
 		[]
 	);
-	const onChangeLabelType = useCallback((label_type: string) => {
-		setAttributes({ label_type });
+	const onChangeLabelType = useCallback(
+		(label_type: Attributes["label_type"]) => {
+			setAttributes({ label_type });
 
-		if (label_type === "language") {
-			const language_obj = languages.find(
-				({ value }) => value === language
-			);
+			if (label_type === "language") {
+				const language_obj = languages.find(
+					({ value }) => value === language
+				);
 
-			if (language_obj) {
-				setAttributes({ label: language_obj.label });
+				if (language_obj) {
+					setAttributes({ label: language_obj.label });
+				}
 			}
-		}
-	}, []);
+		},
+		[]
+	);
 
 	return (
 		<Div className="control-container">

@@ -18,15 +18,12 @@ declare const wp: {
 	i18n: typeof import("wordpress__i18n");
 };
 
-interface Object {
+interface ComponentProps {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	[key: string]: any;
-}
-
-interface ComponentProps extends Object {
-	children?: React.ReactNode;
+	[prop: string]: any;
 	id?: string | null;
 	className?: string | null | (string | null)[] | undefined;
+	children?: import("react").ReactNode;
 }
 
 interface Attributes {
