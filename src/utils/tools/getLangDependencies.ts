@@ -15,11 +15,14 @@ export const getLangDependencies = (lang: string): string[] => {
 		return [];
 	}
 
-	const deps_array = castArrayFromString(deps).reduce<string[]>((acc, dep) => {
-		const dep_deps = getLangDependencies(dep);
+	const deps_array = castArrayFromString(deps).reduce<string[]>(
+		(acc, dep) => {
+			const dep_deps = getLangDependencies(dep);
 
-		return acc.concat(...dep_deps, dep);
-	}, []);
+			return acc.concat(...dep_deps, dep);
+		},
+		[]
+	);
 
 	return deps_array;
 };

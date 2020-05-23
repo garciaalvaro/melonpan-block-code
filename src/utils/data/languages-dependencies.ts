@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const languages_dependencies: Record<string, any> = {
 	javascript: "clike",
 	actionscript: "javascript",
@@ -73,5 +74,5 @@ export const languages_dependencies: Record<string, any> = {
 	velocity: "markup",
 	wiki: "markup",
 	xeora: "markup",
-	xquery: "markup"
+	xquery: "markup",
 };

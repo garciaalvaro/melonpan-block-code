@@ -4,14 +4,15 @@ import {
 	block_category,
 	block_title,
 	block_description,
-	block_name
+	block_name,
 } from "utils/data";
 import { Icon } from "utils/Components";
 import { Edit } from "Components/Edit/Edit";
 import { BlockContainer } from "Components/BlockContainer/BlockContainer";
 import { BlockContent } from "Components/BlockContent/BlockContent";
 
-interface AttributesDefinition extends Record<keyof Attributes, any> {}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AttributesDefinition = Record<keyof Attributes, any>;
 
 registerBlockType<AttributesDefinition>(block_name, {
 	title: block_title,
@@ -19,7 +20,7 @@ registerBlockType<AttributesDefinition>(block_name, {
 	category: block_category,
 	description: block_description,
 	supports: {
-		align: true
+		align: true,
 	},
 	edit: (props: EditProps) => <Edit {...props} />,
 	save: (props: SaveProps) => (
@@ -29,59 +30,59 @@ registerBlockType<AttributesDefinition>(block_name, {
 	),
 	attributes: {
 		language: {
-			type: "string"
+			type: "string",
 		},
 		theme: {
 			type: "string",
-			default: "tomorrow_night"
+			default: "tomorrow_night",
 		},
 		scheme: {
 			type: "string",
-			default: "dark"
+			default: "dark",
 		},
 		view: {
 			type: "string",
-			default: "editor"
+			default: "editor",
 		},
 		copy_button_enabled: {
 			type: "boolean",
-			default: false
+			default: false,
 		},
 		label_enabled: {
 			type: "boolean",
-			default: false
+			default: false,
 		},
 		content: {
 			type: "string",
 			source: "text",
 			selector: "code",
-			default: ""
+			default: "",
 		},
 		label: {
 			type: "string",
 			source: "text",
 			selector: ".mbcode-label",
-			default: ""
+			default: "",
 		},
 		label_type: {
 			type: "string",
-			default: "language"
+			default: "language",
 		},
 		padding_tb: {
 			type: "number",
-			default: 40
+			default: 40,
 		},
 		padding_lr: {
 			type: "number",
-			default: 30
+			default: 30,
 		},
 		border_radius: {
 			type: "number",
-			default: 0
+			default: 0,
 		},
 		border_width: {
 			type: "number",
-			default: 0
-		}
-	}
+			default: 0,
+		},
+	},
 });

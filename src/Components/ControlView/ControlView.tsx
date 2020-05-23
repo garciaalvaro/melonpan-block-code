@@ -6,7 +6,7 @@ import { addPrefix } from "utils/tools";
 
 const buttons = [
 	{ value: "editor", label: __("Editor") },
-	{ value: "previewer", label: __("Previewer") }
+	{ value: "previewer", label: __("Previewer") },
 ];
 
 export const ControlView: React.ComponentType<EditProps> = props => {
@@ -27,10 +27,13 @@ export const ControlView: React.ComponentType<EditProps> = props => {
 					{buttons.map(({ value, label }) => (
 						<Button
 							key={value}
-							className={["button", view === value ? "is_active" : null]}
+							className={[
+								"button",
+								view === value ? "is_active" : null,
+							]}
 							onClick={() =>
 								setAttributes({
-									view: value
+									view: value,
 								})
 							}
 						>

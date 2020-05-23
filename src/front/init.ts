@@ -1,8 +1,8 @@
 import { MelonpanBlockCode } from "./class-MelonpanBlockCode";
 
-export const init = () => {
+export const init = (): void => {
 	const blocks = [
-		...document.querySelectorAll(".wp-block-melonpan-block-code")
+		...document.querySelectorAll(".wp-block-melonpan-block-code"),
 	];
 
 	blocks.forEach(node => {

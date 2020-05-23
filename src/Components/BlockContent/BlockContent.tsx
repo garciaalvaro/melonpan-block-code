@@ -18,7 +18,7 @@ export const BlockContent: React.ComponentType<Props> = props => {
 				{highlighted_content ? (
 					<Code
 						dangerouslySetInnerHTML={{
-							__html: highlighted_content
+							__html: highlighted_content,
 						}}
 					/>
 				) : (

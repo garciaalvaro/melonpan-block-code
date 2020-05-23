@@ -54,7 +54,10 @@ export const Edit: React.ComponentType<EditProps> = props => {
 			<Sidebar {...props} />
 			<Toolbar {...props} />
 			{view === "previewer" ? (
-				<BlockContent {...props} highlighted_content={highlighted_content} />
+				<BlockContent
+					{...props}
+					highlighted_content={highlighted_content}
+				/>
 			) : (
 				<PlainText
 					value={content}

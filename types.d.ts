@@ -1,5 +1,6 @@
 // Console log shortcut
-declare const l: Function;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare const l: (log: any) => void;
 
 // Lodash
 declare const lodash: typeof import("lodash");
@@ -18,6 +19,7 @@ declare const wp: {
 };
 
 interface Object {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	[key: string]: any;
 }
 
@@ -50,5 +52,6 @@ interface SaveProps {
 interface EditProps {
 	className: string;
 	attributes: Attributes;
-	setAttributes: Function;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	setAttributes: (attributes: Partial<Attributes>) => void;
 }

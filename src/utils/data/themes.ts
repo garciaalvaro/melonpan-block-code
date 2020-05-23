@@ -10,7 +10,7 @@ export const themes: Theme[] = [
 	{
 		value: "ateliersulphurpool_light",
 		label: "Ateliersulphurpool Light",
-		scheme: "light"
+		scheme: "light",
 	},
 	{ value: "cb", label: "CB", scheme: "dark" },
 	{ value: "coy", label: "Coy", scheme: "light" },
@@ -33,29 +33,29 @@ export const themes: Theme[] = [
 	{
 		value: "tomorrow",
 		label: "Tomorrow",
-		scheme: "light"
+		scheme: "light",
 	},
 	{
 		value: "tomorrow_night",
 		label: "Tomorrow Night",
-		scheme: "dark"
+		scheme: "dark",
 	},
 	{
 		value: "tomorrow_night_eighties",
 		label: "Tomorrow Night Eighties",
-		scheme: "dark"
+		scheme: "dark",
 	},
 	{
 		value: "tomorrow_night_blue",
 		label: "Tomorrow Night Blue",
-		scheme: "dark"
+		scheme: "dark",
 	},
 	{
 		value: "tomorrow_night_bright",
 		label: "Tomorrow Night Bright",
-		scheme: "dark"
+		scheme: "dark",
 	},
 	{ value: "twilight", label: "Twilight", scheme: "dark" },
 	{ value: "vs", label: "VS", scheme: "light" },
-	{ value: "xonokai", label: "Xonokai", scheme: "dark" }
+	{ value: "xonokai", label: "Xonokai", scheme: "dark" },
 ];

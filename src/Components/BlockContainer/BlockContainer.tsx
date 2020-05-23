@@ -16,7 +16,7 @@ export const BlockContainer: React.ComponentType<Props> = props => {
 		padding_tb,
 		padding_lr,
 		border_width,
-		border_radius
+		border_radius,
 	} = attributes;
 	const classes = [
 		className ? `!${className}` : null,
@@ -25,7 +25,7 @@ export const BlockContainer: React.ComponentType<Props> = props => {
 		padding_tb ? `padding_tb-${padding_tb}` : null,
 		padding_lr ? `padding_lr-${padding_lr}` : null,
 		border_radius ? `border_radius-${border_radius}` : null,
-		border_width ? `border_width-${border_width}` : null
+		border_width ? `border_width-${border_width}` : null,
 	];
 
 	return (
