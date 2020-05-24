@@ -11,7 +11,7 @@ const BUILD_DIR = path.join(__dirname, "../build");
 
 export default {
 	entry: {
-		fromt: SRC_DIR + "/index-fromt.ts",
+		front: SRC_DIR + "/index-front.ts",
 		editor: SRC_DIR + "/index-editor.ts",
 	},
 
