@@ -50,6 +50,10 @@ Installation from the WordPress admin.
 
 == Changelog ==
 
+= 1.1.0 =
+* Small CSS fix for WP 5.4 version.
+* Improved development environment (updated packages, added linting...)
+
 = 1.0.1 =
 * Improved code base.
 
