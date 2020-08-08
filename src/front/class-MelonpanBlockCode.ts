@@ -10,7 +10,7 @@ export class MelonpanBlockCode {
 	code: HTMLElement | null = null;
 	button: HTMLElement | null = null;
 	container: HTMLElement | null = null;
-	content: string = "";
+	content = "";
 
 	constructor(node: Element) {
 		this.button = node.querySelector("button");
@@ -22,12 +22,12 @@ export class MelonpanBlockCode {
 		}
 	}
 
-	init = () => {
+	init = (): void => {
 		this.setClick();
 		this.setSyntax();
 	};
 
-	setClick = () => {
+	setClick = (): void => {
 		if (!this.button || !this.code) {
 			return;
 		}
@@ -58,7 +58,7 @@ export class MelonpanBlockCode {
 		});
 	};
 
-	setSyntax = () => {
+	setSyntax = (): void => {
 		if (
 			!this.container ||
 			!this.container.dataset.language ||

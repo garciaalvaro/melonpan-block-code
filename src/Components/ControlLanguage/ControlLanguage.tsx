@@ -11,15 +11,16 @@ import { plugin_prefix, languages, Language } from "utils/data";
 const options = [
 	{
 		label: __("Common"),
-		options: languages.filter(({ common }) => common)
+		options: languages.filter(({ common }) => common),
 	},
 	{
 		label: __("Others"),
-		options: languages.filter(({ common }) => !common)
-	}
+		options: languages.filter(({ common }) => !common),
+	},
 ];
 
-const formatGroupLabel = (data: Object) => (
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const formatGroupLabel = (data: any) => (
 	<Div>
 		<Span>{data.label}</Span>
 		<Span>{data.options.length}</Span>
@@ -55,7 +56,9 @@ export const ControlLanguage: React.ComponentType<EditProps> = props => {
 			<BaseControl
 				id={addPrefix("control-language")}
 				label={__("Language")}
-				help={__("Choose the language which the entered code belongs to.")}
+				help={__(
+					"Choose the language which the entered code belongs to."
+				)}
 				className={addPrefix("control")}
 			>
 				<ReactSelect

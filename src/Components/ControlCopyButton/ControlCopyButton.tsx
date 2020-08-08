@@ -11,7 +11,7 @@ export const ControlCopyButton: React.ComponentType<EditProps> = props => {
 	const onChange = useCallback(
 		(copy_button_enabled: Attributes["copy_button_enabled"]) =>
 			setAttributes({
-				copy_button_enabled
+				copy_button_enabled,
 			}),
 		[]
 	);
@@ -25,7 +25,9 @@ export const ControlCopyButton: React.ComponentType<EditProps> = props => {
 			>
 				<ToggleControl
 					className={addPrefix("control-toggle")}
-					label={copy_button_enabled ? __("Active") : __("Not active")}
+					label={
+						copy_button_enabled ? __("Active") : __("Not active")
+					}
 					checked={copy_button_enabled}
 					help={__(
 						"If this option is selected a copy button will be displayed on the top right corner of the block."

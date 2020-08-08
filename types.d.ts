@@ -1,8 +1,14 @@
 // Console log shortcut
-declare const l: Function;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare const l: (log: any) => void;
 
 // Lodash
+// Gutenberg exposes a global variable with lodash
 declare const lodash: typeof import("lodash");
+
+// React
+// Gutenberg exposes a global variable with React
+declare const React: typeof import("react");
 
 // Wordpress
 declare const wp: {
@@ -17,14 +23,12 @@ declare const wp: {
 	i18n: typeof import("wordpress__i18n");
 };
 
-interface Object {
-	[key: string]: any;
-}
-
-interface ComponentProps extends Object {
-	children?: React.ReactNode;
+interface ComponentProps {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	[prop: string]: any;
 	id?: string | null;
 	className?: string | null | (string | null)[] | undefined;
+	children?: import("react").ReactNode;
 }
 
 interface Attributes {
@@ -50,5 +54,6 @@ interface SaveProps {
 interface EditProps {
 	className: string;
 	attributes: Attributes;
-	setAttributes: Function;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	setAttributes: (attributes: Partial<Attributes>) => void;
 }

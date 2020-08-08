@@ -3,13 +3,18 @@ import { BannerPlugin } from "webpack";
 import TerserJSPlugin from "terser-webpack-plugin";
 import path from "path";
 
+const SRC_DIR = path.join(__dirname, "../src");
+const BUILD_DIR = path.join(__dirname, "../build");
+
 export default [
 	{
-		entry: path.join(__dirname, "../src/index-prism_languages.ts"),
+		entry: SRC_DIR + "/index-prism_languages.ts",
+
 		output: {
-			path: path.join(__dirname, "../build"),
-			filename: `${name}-prism_languages.js`
+			path: BUILD_DIR,
+			filename: `${name}-prism_languages.js`,
 		},
+
 		module: {
 			rules: [
 				{
@@ -24,36 +29,44 @@ export default [
 									`wp.hooks.addAction( "mbcode.addPrismLanguage.$3", "addPrismLanguage", function() {`,
 									`\nif ( window.Prism && window.Prism.languages && window.Prism.languages["$3"] ) { return; }`,
 									`\n$1$2$3$4`,
-									`\n});\n`
+									`\n});\n`,
 								].join(""),
-								flags: "g"
-							}
-						}
+								flags: "g",
+							},
+						},
 					],
-					include: path.join(__dirname, "../node_modules/prismjs/components")
-				}
-			]
+					include: path.join(
+						__dirname,
+						"../node_modules/prismjs/components"
+					),
+				},
+			],
 		},
+
 		optimization: {
-			minimizer: [new TerserJSPlugin({})]
+			minimizer: [new TerserJSPlugin({})],
 		},
+
 		plugins: [
 			new BannerPlugin({
 				banner: [
 					`/*! ${description} | ${version} | ${homepage} */`,
-					"/*! Prism | https://github.com/PrismJS/prism/ | Lea Verou | MIT License */"
+					"/*! Prism | https://github.com/PrismJS/prism/ | Lea Verou | MIT License */",
 				].join(""),
 				raw: true,
-				include: new RegExp(/.*?\.js/)
-			})
-		]
+				include: new RegExp(/.*?\.js/),
+			}),
+		],
 	},
+
 	{
-		entry: path.join(__dirname, "../src/index-prism_languages.ts"),
+		entry: SRC_DIR + "/index-prism_languages.ts",
+
 		output: {
-			path: path.join(__dirname, "../build"),
-			filename: "_temp.js"
+			path: BUILD_DIR,
+			filename: "_temp.js",
 		},
+
 		module: {
 			rules: [
 				{
@@ -63,8 +76,8 @@ export default [
 							loader: "file-loader",
 							options: {
 								name: `${name}-[name].js`,
-								outputPath: "prism_languages"
-							}
+								outputPath: "prism_languages",
+							},
 						},
 						{
 							loader: "string-replace-loader",
@@ -78,18 +91,22 @@ export default [
 									`\nwp.hooks.addAction( "mbcode.addPrismLanguage.$3", "addPrismLanguage", function() {`,
 									`\nif ( window.Prism && window.Prism.languages && window.Prism.languages["$3"] ) { return; }`,
 									`\n$1$2$3$4`,
-									`\n});\n`
+									`\n});\n`,
 								].join(""),
-								flags: "g"
-							}
-						}
+								flags: "g",
+							},
+						},
 					],
-					include: path.join(__dirname, "../node_modules/prismjs/components")
-				}
-			]
+					include: path.join(
+						__dirname,
+						"../node_modules/prismjs/components"
+					),
+				},
+			],
 		},
+
 		optimization: {
-			minimizer: [new TerserJSPlugin({})]
-		}
-	}
+			minimizer: [new TerserJSPlugin({})],
+		},
+	},
 ];

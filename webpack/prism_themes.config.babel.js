@@ -5,13 +5,18 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import nib from "nib";
 import path from "path";
 
+const SRC_DIR = path.join(__dirname, "../src");
+const BUILD_DIR = path.join(__dirname, "../build");
+
 export default [
 	{
-		entry: path.join(__dirname, "../src/index-prism_themes.ts"),
+		entry: SRC_DIR + "/index-prism_themes.ts",
+
 		output: {
-			path: path.join(__dirname, "../build"),
-			filename: "_temp.js"
+			path: BUILD_DIR,
+			filename: "_temp.js",
 		},
+
 		module: {
 			rules: [
 				{
@@ -21,36 +26,41 @@ export default [
 							loader: "file-loader",
 							options: {
 								name: `${name}-[name].css`,
-								outputPath: "prism_themes"
-							}
+								outputPath: "prism_themes",
+							},
 						},
+
 						{
 							loader: "stylus-loader",
 							options: {
 								use: [nib()],
-								import: ["~nib/index.styl"]
-							}
-						}
-					]
-				}
-			]
+								import: ["~nib/index.styl"],
+							},
+						},
+					],
+				},
+			],
 		},
+
 		optimization: {
 			minimizer: [
 				new OptimizeCSSAssetsPlugin({
 					cssProcessorPluginOptions: {
-						preset: ["default", { discardComments: false }]
-					}
-				})
-			]
-		}
-	},
-	{
-		entry: path.join(__dirname, "../src/index-prism_themes.ts"),
-		output: {
-			path: path.join(__dirname, "../build"),
-			filename: "_temp.js"
+						preset: ["default", { discardComments: false }],
+					},
+				}),
+			],
 		},
+	},
+
+	{
+		entry: SRC_DIR + "/index-prism_themes.ts",
+
+		output: {
+			path: BUILD_DIR,
+			filename: "_temp.js",
+		},
+
 		module: {
 			rules: [
 				{
@@ -62,30 +72,33 @@ export default [
 							loader: "stylus-loader",
 							options: {
 								use: [nib()],
-								import: ["~nib/index.styl"]
-							}
-						}
-					]
-				}
-			]
+								import: ["~nib/index.styl"],
+							},
+						},
+					],
+				},
+			],
 		},
+
 		plugins: [
 			new MiniCssExtractPlugin({
-				filename: `${name}-prism_themes.css`
+				filename: `${name}-prism_themes.css`,
 			}),
+
 			new BannerPlugin({
 				banner: `${description} | ${version} | ${homepage}`,
-				include: new RegExp(/.*?\.css/)
-			})
+				include: new RegExp(/.*?\.css/),
+			}),
 		],
+
 		optimization: {
 			minimizer: [
 				new OptimizeCSSAssetsPlugin({
 					cssProcessorPluginOptions: {
-						preset: ["default", { discardComments: false }]
-					}
-				})
-			]
-		}
-	}
+						preset: ["default", { discardComments: false }],
+					},
+				}),
+			],
+		},
+	},
 ];

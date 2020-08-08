@@ -7,5 +7,5 @@ export const icons: Icons = {
 			<rect width="40" height="15" x="30" y="10" />
 			<rect width="40" height="15" x="30" y="75" />
 		</svg>
-	)
+	),
 };

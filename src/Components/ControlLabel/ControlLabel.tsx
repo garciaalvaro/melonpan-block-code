@@ -4,7 +4,7 @@ import {
 	BaseControl,
 	ToggleControl,
 	TextControl,
-	RadioControl
+	RadioControl,
 } from "@wordpress/components";
 
 import { Div } from "utils/Components";
@@ -17,21 +17,26 @@ export const ControlLanguageLabel: React.ComponentType<EditProps> = props => {
 	const onChangeLabelEnabled = useCallback(
 		(label_enabled: Attributes["label_enabled"]) =>
 			setAttributes({
-				label_enabled
+				label_enabled,
 			}),
 		[]
 	);
-	const onChangeLabelType = useCallback((label_type: string) => {
-		setAttributes({ label_type });
+	const onChangeLabelType = useCallback(
+		(label_type: Attributes["label_type"]) => {
+			setAttributes({ label_type });
 
-		if (label_type === "language") {
-			const language_obj = languages.find(({ value }) => value === language);
+			if (label_type === "language") {
+				const language_obj = languages.find(
+					({ value }) => value === language
+				);
 
-			if (language_obj) {
-				setAttributes({ label: language_obj.label });
+				if (language_obj) {
+					setAttributes({ label: language_obj.label });
+				}
 			}
-		}
-	}, []);
+		},
+		[]
+	);
 
 	return (
 		<Div className="control-container">
@@ -55,19 +60,19 @@ export const ControlLanguageLabel: React.ComponentType<EditProps> = props => {
 				className={addPrefix([
 					"control",
 					"control-radio",
-					label_enabled ? "is_active" : "no-is_active"
+					label_enabled ? "is_active" : "no-is_active",
 				])}
 				selected={label_type}
 				onChange={onChangeLabelType}
 				options={[
 					{
 						value: "language",
-						label: __("Current code language")
+						label: __("Current code language"),
 					},
 					{
 						value: "custom",
-						label: __("Custom text")
-					}
+						label: __("Custom text"),
+					},
 				]}
 			/>
 			<TextControl
@@ -76,7 +81,7 @@ export const ControlLanguageLabel: React.ComponentType<EditProps> = props => {
 					"control-text",
 					label_enabled && label_type === "custom"
 						? "is_active"
-						: "no-is_active"
+						: "no-is_active",
 				])}
 				value={label}
 				onChange={label => setAttributes({ label })}

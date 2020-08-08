@@ -4,7 +4,7 @@ export {
 	plugin_prefix,
 	block_title,
 	block_description,
-	block_name
+	block_name,
 } from "./plugin";
 export { icons, Icons } from "./icons";
 export { languages_dependencies } from "./languages-dependencies";

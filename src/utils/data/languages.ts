@@ -182,5 +182,5 @@ export const languages: Language[] = [
 	{ value: "xeora", label: "Xeora", common: false },
 	{ value: "xojo", label: "Xojo (REALbasic)", common: false },
 	{ value: "xquery", label: "XQuery", common: false },
-	{ value: "yaml", label: "YAML", common: false }
+	{ value: "yaml", label: "YAML", common: false },
 ];

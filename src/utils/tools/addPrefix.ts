@@ -16,7 +16,7 @@ const resolvePrefix = (
 
 export const addPrefix = (
 	elements: string | null | (string | null)[] | undefined,
-	separator: string = "-",
+	separator = "-",
 	prefix = plugin_prefix
 ): string => {
 	if (!elements) {
@@ -29,8 +29,8 @@ export const addPrefix = (
 
 	return flow([
 		compact,
-		(elements: string[]) =>
+		(elements: string[]): string[] =>
 			elements.map(el => resolvePrefix(el, separator, prefix)),
-		(elements: string[]) => elements.join(" ")
+		(elements: string[]): string => elements.join(" "),
 	])(elements);
 };
