@@ -17,14 +17,25 @@
 		"jsx": "react",
 		"baseUrl": ".",
 		"paths": {
-			"Components/*": ["src/Components/*"],
-			"utils/*": ["src/utils/*"],
-			"init/*": ["src/init/*"]
+			"Components/*": [
+				"src/components-/*"
+			],
+			"utils/*": [
+				"src/utils/*"
+			],
+			"init/*": [
+				"src/init/*"
+			]
 		},
 		// https://stackoverflow.com/a/52404148 | CC BY-SA 3.0
 		"skipLibCheck": true
 	},
-	"include": ["src", "types.d.ts"],
-	"exclude": ["node_modules"],
+	"include": [
+		"src",
+		"types.d.ts"
+	],
+	"exclude": [
+		"node_modules"
+	],
 	"compileOnSave": false
 }
