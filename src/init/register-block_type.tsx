@@ -7,9 +7,9 @@ import {
 	block_name,
 } from "utils/data";
 import { Icon } from "utils/Components";
-import { Edit } from "src/components-/Edit/Edit";
-import { BlockContainer } from "src/components-/BlockContainer/BlockContainer";
-import { BlockContent } from "src/components-/BlockContent/BlockContent";
+import { Edit } from "src/components/Edit/Edit";
+import { BlockContainer } from "src/components/BlockContainer/BlockContainer";
+import { BlockContent } from "src/components/BlockContent/BlockContent";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AttributesDefinition = Record<keyof Attributes, any>;
