@@ -13,7 +13,6 @@ export const Button: FunctionComponent<Props> = props => {
 
 	return (
 		<button
-			type="button"
 			onClick={event => onClick(event)}
 			className={classNameUtil(
 				Array.isArray(className) ? className : [className]
