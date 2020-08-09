@@ -1,6 +1,6 @@
-export type Language = { label: string; value: string; common: boolean };
+export const languages: LanguageOption[] = [
+	// Common
 
-export const languages: Language[] = [
 	{ value: "css", label: "CSS", common: true },
 	{ value: "markup", label: "HTML, XML, Markup", common: true },
 	{ value: "javascript", label: "JavaScript", common: true },
@@ -15,7 +15,9 @@ export const languages: Language[] = [
 	{ value: "ruby", label: "Ruby", common: true },
 	{ value: "swift", label: "Swift", common: true },
 	{ value: "typescript", label: "TypeScript", common: true },
-	//
+
+	// Others
+
 	{ value: "abap", label: "ABAP", common: false },
 	{ value: "abnf", label: "Augmented Backus–Naur form", common: false },
 	{ value: "actionscript", label: "ActionScript", common: false },

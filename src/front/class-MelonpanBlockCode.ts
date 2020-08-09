@@ -4,7 +4,7 @@ import { decodeEntities } from "@wordpress/html-entities";
 import { __ } from "@wordpress/i18n";
 import { doAction } from "@wordpress/hooks";
 
-import { getLangDependencies } from "utils/tools/getLangDependencies";
+import { getLangDependencies } from "@/utils/tools/getLangDependencies";
 
 export class MelonpanBlockCode {
 	code: HTMLElement | null = null;
@@ -12,10 +12,10 @@ export class MelonpanBlockCode {
 	container: HTMLElement | null = null;
 	content = "";
 
-	constructor(node: Element) {
+	constructor(node: HTMLElement) {
 		this.button = node.querySelector("button");
 		this.code = node.querySelector("code");
-		this.container = node as HTMLElement;
+		this.container = node;
 
 		if (this.code) {
 			this.content = this.code.innerHTML;
@@ -28,17 +28,11 @@ export class MelonpanBlockCode {
 	};
 
 	setClick = (): void => {
-		if (!this.button || !this.code) {
-			return;
-		}
+		if (!this.button || !this.code) return;
 
 		this.button.addEventListener("click", () => {
-			if (
-				!this.button ||
-				this.button.classList.contains("mbcode-just-copied")
-			) {
-				return;
-			}
+			if (!this.button) return;
+			if (this.button.classList.contains("mbcode-just-copied")) return;
 
 			copy(decodeEntities(this.content));
 
@@ -68,7 +62,7 @@ export class MelonpanBlockCode {
 			return;
 		}
 
-		const { language } = this.container.dataset;
+		const language = this.container.dataset.language as Language;
 		const { textContent } = this.code;
 
 		const dependencies = getLangDependencies(language);

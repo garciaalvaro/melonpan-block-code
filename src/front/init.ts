@@ -6,7 +6,9 @@ export const init = (): void => {
 	];
 
 	blocks.forEach(node => {
-		const melonpan_block_code = new MelonpanBlockCode(node);
+		const melonpan_block_code = new MelonpanBlockCode(
+			node as HTMLDivElement
+		);
 
 		melonpan_block_code.init();
 	});

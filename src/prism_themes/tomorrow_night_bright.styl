@@ -1,0 +1,94 @@
+/**
+ * prism.js tomorrow night bright for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ */
+
+$Background = #000000
+$CurrentLine = #2a2a2a
+$Selection = #424242
+$Foreground = #eaeaea
+$Comment = #969896
+$Red = #d54e53
+$Orange = #e78c45
+$Yellow = #e7c547
+$Green = #b9ca4a
+$Aqua = #70c0b1
+$Blue = #7aa6da
+$Purple = #c397d8
+
+.mbcode-theme-tomorrow_night_bright
+
+	pre
+		color $Red
+		background $Background
+		font-family Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace
+
+		::-moz-selection
+			background $Selection
+
+		::selection
+			background $Selection
+
+	.token.plain-text
+		color $Foreground
+
+	.token.comment
+	.token.block-comment
+	.token.prolog
+	.token.doctype
+	.token.cdata
+		color $Comment
+
+	.token.property
+	.token.tag
+	.token.attr-name
+	.token.namespace
+	.token.deleted
+	.token.variable
+		color $Red
+
+	.token.function-name
+	.token.boolean
+	.token.number
+	.token.function
+		color $Blue
+
+	.token.inserted
+	.token.class-name
+		color $Yellow
+
+	.token.delimiter
+	.token.symbol
+		color $Orange
+
+	.token.selector
+	.token.important
+	.token.atrule
+	.token.keyword
+	.token.builtin
+		color $Purple
+
+	.token.string
+	.token.char
+	.token.attr-value
+	.token.regex
+		color $Green
+
+	.token.operator
+		color $Aqua
+
+	.token.punctuation
+	.token.constant
+	.token.entity
+	.token.url
+		color $Foreground
+
+	.token.important
+	.token.bold
+		font-weight bold
+
+	.token.italic
+		font-style italic
+
+	.token.entity
+		cursor help

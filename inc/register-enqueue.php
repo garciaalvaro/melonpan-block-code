@@ -15,7 +15,7 @@ function enqueue_front() {
 
 	wp_enqueue_style(
 		PLUGIN_NAME . '-front',
-		BUILD_DIR . PLUGIN_NAME . '-front.css',
+		DIST_DIR . PLUGIN_NAME . '-front.css',
 		array(),
 		PLUGIN_VERSION
 	);
@@ -31,21 +31,21 @@ function enqueue_editor() {
 
 	wp_enqueue_style(
 		PLUGIN_NAME . '-editor',
-		BUILD_DIR . PLUGIN_NAME . '-editor.css',
+		DIST_DIR . PLUGIN_NAME . '-editor.css',
 		array(),
 		PLUGIN_VERSION
 	);
 
 	wp_enqueue_style(
 		PLUGIN_NAME . '-prism_themes',
-		BUILD_DIR . PLUGIN_NAME . '-prism_themes.css',
+		DIST_DIR . PLUGIN_NAME . '-prism_themes.css',
 		array(),
 		PLUGIN_VERSION
 	);
 
 	wp_enqueue_script(
 		PLUGIN_NAME . '-prism_languages',
-		BUILD_DIR . PLUGIN_NAME . '-prism_languages.js',
+		DIST_DIR . PLUGIN_NAME . '-prism_languages.js',
 		array(
 			'wp-hooks',
 		),
@@ -55,7 +55,7 @@ function enqueue_editor() {
 
 	wp_enqueue_script(
 		PLUGIN_NAME . '-editor',
-		BUILD_DIR . PLUGIN_NAME . '-editor.js',
+		DIST_DIR . PLUGIN_NAME . '-editor.js',
 		array(
 			PLUGIN_NAME . '-prism_languages',
 			'lodash',

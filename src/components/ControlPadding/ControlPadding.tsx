@@ -1,18 +1,21 @@
+import React, { FunctionComponent } from "react";
 import { __ } from "@wordpress/i18n";
 import { RangeControl } from "@wordpress/components";
 
-import { Div } from "utils/Components";
-import { addPrefix } from "utils/tools";
+import { className } from "@/utils/tools";
 
-export const ControlPadding: React.ComponentType<EditProps> = props => {
+export const ControlPadding: FunctionComponent<EditProps> = props => {
 	const { attributes, setAttributes } = props;
 	const { padding_tb, padding_lr } = attributes;
 
 	return (
-		<Div className="control-container">
+		<div className="mbcode-control-container">
 			<RangeControl
-				id={addPrefix("control-padding_tb")}
-				className={addPrefix(["control-range", "control"])}
+				id="mbcode-control-padding_tb"
+				className={className([
+					"mbcode-control-range",
+					"mbcode-control",
+				])}
 				label={__("Padding top & bottom [px]")}
 				value={padding_tb}
 				min={0}
@@ -22,9 +25,13 @@ export const ControlPadding: React.ComponentType<EditProps> = props => {
 					setAttributes({ padding_tb })
 				}
 			/>
+
 			<RangeControl
-				id={addPrefix("control-padding_lr")}
-				className={addPrefix(["control-range", "control"])}
+				id="mbcode-control-padding_lr"
+				className={className([
+					"mbcode-control-range",
+					"mbcode-control",
+				])}
 				label={__("Padding left & right [px]")}
 				value={padding_lr}
 				min={0}
@@ -34,6 +41,6 @@ export const ControlPadding: React.ComponentType<EditProps> = props => {
 					setAttributes({ padding_lr })
 				}
 			/>
-		</Div>
+		</div>
 	);
 };

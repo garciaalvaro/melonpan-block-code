@@ -1,12 +1,10 @@
+import React, { FunctionComponent } from "react";
 import ReactSelect from "react-select";
-import { ValueType } from "react-select/src/types";
 import { __ } from "@wordpress/i18n";
 import { BaseControl } from "@wordpress/components";
-import { useState, useCallback } from "@wordpress/element";
+import { useState } from "@wordpress/element";
 
-import { Div, Span } from "utils/Components";
-import { addPrefix } from "utils/tools";
-import { plugin_prefix, languages, Language } from "utils/data";
+import { plugin_prefix, languages } from "@/utils/data";
 
 const options = [
 	{
@@ -21,56 +19,51 @@ const options = [
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const formatGroupLabel = (data: any) => (
-	<Div>
-		<Span>{data.label}</Span>
-		<Span>{data.options.length}</Span>
-	</Div>
+	<div>
+		<span>{data.label}</span>
+		<span>{data.options.length}</span>
+	</div>
 );
 
-export const ControlLanguage: React.ComponentType<EditProps> = props => {
+export const ControlLanguage: FunctionComponent<EditProps> = props => {
 	const { attributes, setAttributes } = props;
 	const { language, label_type } = attributes;
+
 	const [selected, setSelected] = useState(
 		languages.find(({ value }) => value === language)
 	);
-	const onChange = useCallback(
-		(selected: ValueType<Language>) => {
-			if (!selected) {
-				return;
-			}
-
-			selected = selected as Language;
-
-			setAttributes({ language: selected.value });
-			setSelected(selected);
-
-			if (label_type === "language") {
-				setAttributes({ label: selected.label });
-			}
-		},
-		[label_type]
-	);
 
 	return (
-		<Div className="control-container">
+		<div className="mbcode-control-container">
 			<BaseControl
-				id={addPrefix("control-language")}
+				id="mbcode-control-language"
 				label={__("Language")}
 				help={__(
 					"Choose the language which the entered code belongs to."
 				)}
-				className={addPrefix("control")}
+				className="mbcode-control"
 			>
 				<ReactSelect
-					className={addPrefix("control-react_select")}
+					className="mbcode-control-react_select"
 					classNamePrefix={plugin_prefix}
 					value={selected}
-					onChange={onChange}
+					onChange={selected => {
+						if (!selected) return;
+
+						selected = selected as LanguageOption;
+
+						setAttributes({ language: selected.value });
+						setSelected(selected);
+
+						if (label_type === "language") {
+							setAttributes({ label: selected.label });
+						}
+					}}
 					options={options}
 					placeholder={__("Select a language")}
 					formatGroupLabel={formatGroupLabel}
 				/>
 			</BaseControl>
-		</Div>
+		</div>
 	);
 };

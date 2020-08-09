@@ -20,8 +20,8 @@ if ( ! defined( __NAMESPACE__ . '\PLUGIN_VERSION' ) ) {
 if ( ! defined( __NAMESPACE__ . '\PLUGIN_NAME' ) ) {
 	define( __NAMESPACE__ . '\PLUGIN_NAME', 'melonpan-block-code' );
 }
-if ( ! defined( __NAMESPACE__ . '\BUILD_DIR' ) ) {
-	define( __NAMESPACE__ . '\BUILD_DIR', plugins_url( 'build/', __FILE__ ) );
+if ( ! defined( __NAMESPACE__ . '\DIST_DIR' ) ) {
+	define( __NAMESPACE__ . '\DIST_DIR', plugins_url( 'dist/', __FILE__ ) );
 }
 if ( ! defined( __NAMESPACE__ . '\INC_DIR' ) ) {
 	define( __NAMESPACE__ . '\INC_DIR', plugin_dir_path( __FILE__ ) . 'inc/' );

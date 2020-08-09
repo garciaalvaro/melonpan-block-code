@@ -1,14 +1,16 @@
-import { Div } from "utils/Components";
+import React, { FunctionComponent } from "react";
 
 import "./BlockContainer.styl";
+import { className as classNameUtil } from "@/utils/tools";
 
-interface Props extends SaveProps {
-	children: React.ReactNode;
-	className?: string;
+interface Props {
+	attributes: Attributes;
+	className?: EditProps["className"];
 }
 
-export const BlockContainer: React.ComponentType<Props> = props => {
-	const { className, attributes, children } = props;
+export const BlockContainer: FunctionComponent<Props> = props => {
+	const { attributes, className, children } = props;
+
 	const {
 		language,
 		theme,
@@ -18,19 +20,20 @@ export const BlockContainer: React.ComponentType<Props> = props => {
 		border_width,
 		border_radius,
 	} = attributes;
-	const classes = [
-		className ? `!${className}` : null,
-		theme ? `theme-${theme}` : null,
-		scheme ? `scheme-${scheme}` : null,
-		padding_tb ? `padding_tb-${padding_tb}` : null,
-		padding_lr ? `padding_lr-${padding_lr}` : null,
-		border_radius ? `border_radius-${border_radius}` : null,
-		border_width ? `border_width-${border_width}` : null,
+
+	const classNames = [
+		className,
+		theme ? `mbcode-theme-${theme}` : null,
+		scheme ? `mbcode-scheme-${scheme}` : null,
+		padding_tb ? `mbcode-padding_tb-${padding_tb}` : null,
+		padding_lr ? `mbcode-padding_lr-${padding_lr}` : null,
+		border_radius ? `mbcode-border_radius-${border_radius}` : null,
+		border_width ? `mbcode-border_width-${border_width}` : null,
 	];
 
 	return (
-		<Div className={classes} data-language={language}>
+		<div className={classNameUtil(classNames)} data-language={language}>
 			{children}
-		</Div>
+		</div>
 	);
 };
