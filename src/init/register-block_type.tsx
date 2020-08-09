@@ -1,3 +1,4 @@
+import React from "react";
 import { registerBlockType } from "@wordpress/blocks";
 
 import {
@@ -5,29 +6,29 @@ import {
 	block_title,
 	block_description,
 	block_name,
-} from "utils/data";
-import { Icon } from "utils/Components";
-import { Edit } from "Components/Edit/Edit";
-import { BlockContainer } from "Components/BlockContainer/BlockContainer";
-import { BlockContent } from "Components/BlockContent/BlockContent";
+} from "@/utils/data";
+import { Logo } from "@/components/Logo";
+import { Edit } from "@/components/Edit";
+import { Save } from "@/components/Save";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type AttributesDefinition = Record<keyof Attributes, any>;
-
-registerBlockType<AttributesDefinition>(block_name, {
+registerBlockType<Record<keyof Attributes, any>>(block_name, {
 	title: block_title,
-	icon: () => <Icon icon="logo" />,
+
+	icon: () => <Logo />,
+
 	category: block_category,
+
 	description: block_description,
+
 	supports: {
 		align: true,
 	},
+
 	edit: (props: EditProps) => <Edit {...props} />,
-	save: (props: SaveProps) => (
-		<BlockContainer {...props}>
-			<BlockContent {...props} />
-		</BlockContainer>
-	),
+
+	save: (props: SaveProps) => <Save {...props} />,
+
 	attributes: {
 		language: {
 			type: "string",
@@ -61,7 +62,7 @@ registerBlockType<AttributesDefinition>(block_name, {
 		label: {
 			type: "string",
 			source: "text",
-			selector: ".mbcode-label",
+			selector: "pre + div",
 			default: "",
 		},
 		label_type: {

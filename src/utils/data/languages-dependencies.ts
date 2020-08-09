@@ -1,5 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const languages_dependencies: Record<string, any> = {
+export const languages_dependencies: Partial<Record<
+	Language,
+	Language | Language[]
+>> = {
 	javascript: "clike",
 	actionscript: "javascript",
 	arduino: "cpp",
@@ -29,13 +31,12 @@ export const languages_dependencies: Record<string, any> = {
 	javadoc: ["markup", "java", "javadoclike"],
 	jolie: "clike",
 	jsdoc: ["javascript", "javadoclike"],
-	"js-extras": "javascript",
-	"js-templates": "javascript",
+	// "js-extras": "javascript",
+	// "js-templates": "javascript",
 	jsonp: "json",
 	json5: "json",
 	kotlin: "clike",
 	less: "css",
-	lilypond: "scheme",
 	markdown: "markup",
 	"markup-templating": "markup",
 	n4js: "javascript",

@@ -1,3 +1,2 @@
-export { addPrefix } from "./addPrefix";
-export { prepareProps } from "./prepareProps";
+export { className } from "./className";
 export { getLangDependencies } from "./getLangDependencies";

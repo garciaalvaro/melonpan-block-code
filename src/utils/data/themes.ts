@@ -1,10 +1,4 @@
-export type Theme = {
-	label: string;
-	value: string;
-	scheme: "light" | "dark";
-};
-
-export const themes: Theme[] = [
+export const themes: ThemeOption[] = [
 	{ value: "a11y_dark", label: "a11y Dark", scheme: "dark" },
 	{ value: "atom_dark", label: "Atom Dark", scheme: "dark" },
 	{

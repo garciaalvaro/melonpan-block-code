@@ -1,0 +1,54 @@
+/**
+ * Layout
+ */
+
+.wp-block-melonpan-block-code
+	position relative
+	font-family 'Roboto Mono', 'Ubuntu Mono', monospace
+	animation appear_late .8s ease
+
+	&.mbcode-scheme-dark
+		color rgba(255,255,255,.8)
+
+	&.mbcode-scheme-light
+		color rgba(0,0,0,.8)
+
+	#editor &
+		animation none
+
+	::selection
+		background rgba(200,200,200,0.3)
+	::-moz-selection
+		background rgba(200,200,200,0.3)
+
+	pre
+		overflow auto
+		tab-size 4
+		hyphens none
+		font-size 1em
+		text-align left
+		white-space pre
+		word-spacing normal
+		word-break normal
+		word-wrap normal
+		font-family inherit
+		font-size inherit
+		position relative
+		padding 0
+
+	code
+		min-width 100%
+		display block
+		font-size inherit
+		background none
+
+@keyframes appear_late {
+	0%, 90% {
+		opacity 0
+		transform translateZ(0)
+	}
+	100% {
+		opacity 1
+		transform translateZ(0)
+	}
+}

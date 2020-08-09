@@ -57,7 +57,7 @@ function render_callback_enqueue_styles( $theme ) {
 
 	wp_enqueue_style(
 		PLUGIN_NAME . '-prism_theme-' . $theme,
-		BUILD_DIR . 'prism_themes/' . PLUGIN_NAME . '-prism-' . $theme . '.css',
+		DIST_DIR . 'prism_themes/' . PLUGIN_NAME . '-prism_theme-' . $theme . '.css',
 		array(),
 		PLUGIN_VERSION
 	);
@@ -88,7 +88,7 @@ function render_callback_enqueue_scripts( $language ) {
 
 		wp_enqueue_script(
 			PLUGIN_NAME . '-prism_language-' . $lang,
-			BUILD_DIR . 'prism_languages/' . PLUGIN_NAME . '-prism-' . $lang . '.min.js',
+			DIST_DIR . 'prism_languages/' . PLUGIN_NAME . '-prism_language-' . $lang . '.js',
 			$deps,
 			PLUGIN_VERSION,
 			true // Enqueue in the footer.
@@ -115,7 +115,7 @@ function render_callback_enqueue_scripts( $language ) {
 
 	wp_enqueue_script(
 		PLUGIN_NAME . '-front',
-		BUILD_DIR . PLUGIN_NAME . '-front.js',
+		DIST_DIR . PLUGIN_NAME . '-front.js',
 		$deps,
 		PLUGIN_VERSION,
 		true // Enqueue in the footer.
