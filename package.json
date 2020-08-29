@@ -1,13 +1,13 @@
 {
 	"name": "melonpan-block-code",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Melonpan Block Code WordPress Plugin",
 	"homepage": "https://wordpress.org/plugins/melonpan-block-code/",
 	"scripts": {
 		"start": "npm run dev",
 		"predev": "npm run clean:dist && npm run copy:prism_languages",
 		"dev": "webpack --mode=development",
-		"prebuild": "npm run clean:dist && npm run clean:release && npm run type-check && npm run prettier && npm run lint",
+		"prebuild": "npm run clean:dist && npm run clean:release && npm run test",
 		"build": "webpack --mode=production",
 		"postbuild": "npm run replace:version && npm run copy:prism_languages && npm run copy:release",
 		"clean:dist": "rm -rf dist",
@@ -15,9 +15,11 @@
 		"copy:release": "node build/copy-files.js",
 		"copy:prism_languages": "node build/copy-prism_languages.js",
 		"replace:version": "node build/replace-version.js",
-		"type-check": "tsc",
-		"lint": "eslint 'src/**/*.{ts,tsx}'",
-		"prettier": "prettier --write 'src/**/*.{ts,tsx}'"
+		"test": "npm run test:types && npm run test:lint && npm run test:prettier",
+		"test:lint": "eslint \"{build,src,types}/**/*.{js,ts,tsx}\" \"*.js\"",
+		"test:prettier": "prettier --check \"{build,src,types}/**/*.{js,ts,tsx}\" \"*.js\"",
+		"test:types": "tsc",
+		"prettier": "prettier --write \"{build,src,types}/**/*.{js,ts,tsx}\" \"*.js\""
 	},
 	"dependencies": {
 		"copy-text-to-clipboard": "^2.1.1",

@@ -16,6 +16,7 @@ interface Attributes {
 
 interface SaveProps {
 	attributes: Attributes;
+	omit_button_type_button_prop?: boolean;
 }
 
 interface EditProps {
