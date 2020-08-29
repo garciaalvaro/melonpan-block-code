@@ -10,6 +10,7 @@ import {
 import { Logo } from "@/components/Logo";
 import { Edit } from "@/components/Edit";
 import { Save } from "@/components/Save";
+import { deprecated } from "./deprecated";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 registerBlockType<Record<keyof Attributes, any>>(block_name, {
@@ -20,6 +21,8 @@ registerBlockType<Record<keyof Attributes, any>>(block_name, {
 	category: block_category,
 
 	description: block_description,
+
+	deprecated,
 
 	supports: {
 		align: true,
