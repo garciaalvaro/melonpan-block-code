@@ -3,7 +3,7 @@ Contributors: melonpan
 Tags: syntax-highlighting, prism, block, block-editor, code, gutenberg
 Requires at least: 5.4
 Tested up to: 5.5
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -49,6 +49,9 @@ Installation from the WordPress admin.
 
 
 == Changelog ==
+
+= 2.0.1 =
+* Fixed bug where old instances of the block with the copy button enabled were throwing a deprecation warning
 
 = 2.0.0 =
 * Major refactor
