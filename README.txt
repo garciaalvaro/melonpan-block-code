@@ -50,6 +50,9 @@ Installation from the WordPress admin.
 
 == Changelog ==
 
+= 2.0.1 =
+* Fixed bug where old instances of the block with the copy button enabled were throwing a deprecation warning
+
 = 2.0.0 =
 * Major refactor
 * Updated packages
