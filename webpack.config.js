@@ -55,7 +55,7 @@ module.exports = (env, { mode }) => {
 
 		output: {
 			path: path.resolve(__dirname, "dist"),
-			filename: `${short_name}.js`,
+			filename: "[name].js",
 		},
 
 		resolve: {
@@ -109,7 +109,7 @@ module.exports = (env, { mode }) => {
 
 	config.plugins.push(
 		new MiniCssExtractPlugin({
-			filename: `${short_name}.css`,
+			filename: "[name].css",
 		})
 	);
 
