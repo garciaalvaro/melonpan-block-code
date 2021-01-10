@@ -1,7 +1,6 @@
-export const languages_dependencies: Partial<Record<
-	Language,
-	Language | Language[]
->> = {
+export const languages_dependencies: Partial<
+	Record<Language, Language | Language[]>
+> = {
 	javascript: "clike",
 	actionscript: "javascript",
 	arduino: "cpp",

@@ -5,16 +5,12 @@
 		"noEmit": true,
 		"strict": true,
 		"esModuleInterop": true,
+		"skipLibCheck": true,
 		"jsx": "react",
 		"baseUrl": ".",
 		"paths": {
-			"@/*": [
-				"src/*"
-			]
+			"@/*": ["src/*"]
 		}
 	},
-	"include": [
-		"src",
-		"types"
-	]
+	"include": ["src", "types"]
 }

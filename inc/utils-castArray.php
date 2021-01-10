@@ -3,7 +3,9 @@
 namespace MELONPANBLOCKCODE;
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if (!defined("ABSPATH")) {
+	exit();
+}
 
 /**
  * Utility that returns an array.
@@ -11,14 +13,15 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  *
  * @since 1.0.0
  */
-function castArray( $value ) {
-	if ( is_array( $value ) ) {
+function castArray($value)
+{
+	if (is_array($value)) {
 		return $value;
 	}
 
-	if ( is_string( $value ) || is_int( $value ) || is_bool( $value ) ) {
-		return array( $value );
+	if (is_string($value) || is_int($value) || is_bool($value)) {
+		return [$value];
 	}
 
-	return array();
+	return [];
 }

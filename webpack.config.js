@@ -1,16 +1,20 @@
-const { name, description, version, homepage } = require("./package.json");
+const {
+	name: short_name,
+	description: name,
+	version,
+	homepage,
+} = require("./package.json");
 const { BannerPlugin } = require("webpack");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const nib = require("nib");
 const path = require("path");
 const { readdirSync } = require("fs");
 
 const prism_themes = readdirSync("./src/prism_themes").reduce(
 	(acc, theme) => ({
 		...acc,
-		[`prism_themes/${name}-prism_theme-${theme.replace(
+		[`prism_themes/${short_name}-prism_theme-${theme.replace(
 			".styl",
 			""
 		)}`]: path.resolve(__dirname, "src/prism_themes", theme),
@@ -20,21 +24,28 @@ const prism_themes = readdirSync("./src/prism_themes").reduce(
 
 module.exports = (env, { mode }) => {
 	const is_production = mode === "production";
+	const is_development = !is_production;
 
 	const config = {
-		watch: !is_production,
+		watch: is_development,
 
 		entry: {
-			[`${name}-front`]: path.resolve(__dirname, "src/entry-front.ts"),
+			[`${short_name}-front`]: path.resolve(
+				__dirname,
+				"src/entry-front.ts"
+			),
 
-			[`${name}-editor`]: path.resolve(__dirname, "src/entry-editor.ts"),
+			[`${short_name}-editor`]: path.resolve(
+				__dirname,
+				"src/entry-editor.ts"
+			),
 
-			[`${name}-prism_themes`]: path.resolve(
+			[`${short_name}-prism_themes`]: path.resolve(
 				__dirname,
 				"src/entry-prism_themes.ts"
 			),
 
-			[`${name}-prism_languages`]: path.resolve(
+			[`${short_name}-prism_languages`]: path.resolve(
 				__dirname,
 				"src/entry-prism_languages.ts"
 			),
@@ -56,6 +67,7 @@ module.exports = (env, { mode }) => {
 		externals: {
 			lodash: "lodash",
 			react: "React",
+			"react-dom": "ReactDOM",
 			"@wordpress/block-editor": "wp.blockEditor",
 			"@wordpress/blocks": "wp.blocks",
 			"@wordpress/components": "wp.components",
@@ -83,25 +95,16 @@ module.exports = (env, { mode }) => {
 
 	config.module.rules.push({
 		test: /node_modules\/prism.+\.js?$/,
-		loader: path.join(__dirname, "./build/webpack_loader-prism_languages"),
+		loader: path.join(
+			__dirname,
+			"./scripts/webpack_loader-prism_languages"
+		),
 		resourceQuery: /mbcode/,
 	});
 
 	config.module.rules.push({
 		test: /\.(css|styl)$/,
-		use: [
-			MiniCssExtractPlugin.loader,
-
-			"css-loader",
-
-			{
-				loader: "stylus-loader",
-				options: {
-					use: [nib()],
-					import: ["~nib/index.styl"],
-				},
-			},
-		],
+		use: [MiniCssExtractPlugin.loader, "css-loader", "stylus-loader"],
 	});
 
 	config.plugins.push(
@@ -113,30 +116,29 @@ module.exports = (env, { mode }) => {
 	if (is_production) {
 		config.plugins.push(
 			new BannerPlugin({
-				banner: `${description} | ${version} | ${homepage}`,
-				include: new RegExp(/.*?\.css/),
+				banner: `${name} v${version} | ${homepage}`,
+				include: /\.css/,
 			})
 		);
 
 		config.plugins.push(
 			new BannerPlugin({
 				banner: [
-					`/*! ${description} | ${version} | ${homepage} */`,
-					"/*! copy-text-to-clipboard | https://github.com/sindresorhus/copy-text-to-clipboard | Sindre Sorhus | MIT License */",
-					"/*! Prism | https://github.com/PrismJS/prism/ | Lea Verou | MIT License */",
-				].join(""),
-				raw: true,
-				include: new RegExp(/.*?\.js/),
+					`${name} v${version} | ${homepage}`,
+					"copy-text-to-clipboard | https://github.com/sindresorhus/copy-text-to-clipboard | Sindre Sorhus | MIT License",
+					"Prism | https://github.com/PrismJS/prism/ | Lea Verou | MIT License",
+				].join("\n"),
+				include: /\.js/,
 			})
 		);
 
 		config.optimization = {
 			minimize: true,
 			minimizer: [
-				new OptimizeCSSAssetsPlugin(),
+				new CssMinimizerPlugin(),
 
 				// As we are using a custom optimization, making use of
-				// OptimizeCSSAssetsPlugin, we also need to specify TerserPlugin
+				// CssMinimizerPlugin, we also need to specify TerserPlugin
 				new TerserPlugin({ extractComments: false }),
 			],
 		};
