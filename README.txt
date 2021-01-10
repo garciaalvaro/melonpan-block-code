@@ -1,8 +1,8 @@
 === Melonpan Block - Code ===
 Contributors: melonpan
 Tags: syntax-highlighting, prism, block, block-editor, code, gutenberg
-Requires at least: 5.4
-Tested up to: 5.5
+Requires at least: 5.5
+Tested up to: 5.6
 Stable tag: 2.0.2
 Requires PHP: 7.1
 License: GPLv3
