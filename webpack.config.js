@@ -83,7 +83,7 @@ module.exports = (env, { mode }) => {
 
 	config.module.rules.push({
 		test: /node_modules\/prism.+\.js?$/,
-		loader: path.join(__dirname, "./build/webpack_loader-prism_languages"),
+		loader: path.join(__dirname, "./scripts/webpack_loader-prism_languages"),
 		resourceQuery: /mbcode/,
 	});
 
