@@ -12,14 +12,14 @@
 		"postbuild": "npm run replace:version && npm run copy:prism_languages && npm run copy:release",
 		"clean:dist": "rm -rf dist",
 		"clean:release": "rm -rf _release",
-		"copy:release": "node build/copy-files.js",
-		"copy:prism_languages": "node build/copy-prism_languages.js",
-		"replace:version": "node build/replace-version.js",
+		"copy:release": "node scripts/copy-files.js",
+		"copy:prism_languages": "node scripts/copy-prism_languages.js",
+		"replace:version": "node scripts/replace-version.js",
 		"test": "npm run test:types && npm run test:lint && npm run test:prettier",
-		"test:lint": "eslint \"{build,src,types}/**/*.{js,ts,tsx}\" \"*.js\"",
-		"test:prettier": "prettier --check \"{build,src,types}/**/*.{js,ts,tsx}\" \"*.js\"",
 		"test:types": "tsc",
-		"prettier": "prettier --write \"{build,src,types}/**/*.{js,ts,tsx}\" \"*.js\""
+		"test:lint": "eslint \"**/*.{js,ts,tsx}\"",
+		"test:prettier": "prettier --check \"**/*.{js,ts,tsx,php,json}\"",
+		"prettier": "prettier --write \"**/*.{js,ts,tsx,php,json}\""
 	},
 	"dependencies": {
 		"@babel/core": "^7.12.10",
