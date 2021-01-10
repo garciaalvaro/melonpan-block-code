@@ -3,20 +3,22 @@
 namespace MELONPANBLOCKCODE;
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if (!defined("ABSPATH")) {
+	exit();
+}
 
 /**
  * Utility that returns the full script name given a Prism language name.
  *
  * @since 1.0.0
  */
-function generateLangDepName( $languages ) {
+function generateLangDepName($languages)
+{
+	$deps = [];
 
-	$deps = array();
-
-	foreach ( $languages as $language ) {
-		$deps[] = PLUGIN_NAME . '-prism_language-' . $language;
+	foreach ($languages as $language) {
+		$deps[] = PLUGIN_NAME . "-prism_language-" . $language;
 	}
 
 	return $deps;
-};
+}
