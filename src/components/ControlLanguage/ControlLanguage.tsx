@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import ReactSelect from "react-select";
+import ReactSelect, { ValueType } from "react-select";
 import { __ } from "@wordpress/i18n";
 import { BaseControl } from "@wordpress/components";
 import { useState } from "@wordpress/element";
@@ -17,19 +17,11 @@ const options = [
 	},
 ];
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const formatGroupLabel = (data: any) => (
-	<div>
-		<span>{data.label}</span>
-		<span>{data.options.length}</span>
-	</div>
-);
-
 export const ControlLanguage: FunctionComponent<EditProps> = props => {
 	const { attributes, setAttributes } = props;
 	const { language, label_type } = attributes;
 
-	const [selected, setSelected] = useState(
+	const [selected, setSelected] = useState<ValueType<LanguageOption, false>>(
 		languages.find(({ value }) => value === language)
 	);
 
@@ -61,7 +53,12 @@ export const ControlLanguage: FunctionComponent<EditProps> = props => {
 					}}
 					options={options}
 					placeholder={__("Select a language")}
-					formatGroupLabel={formatGroupLabel}
+					formatGroupLabel={data => (
+						<div>
+							<span>{data.label}</span>
+							<span>{data.options.length}</span>
+						</div>
+					)}
 				/>
 			</BaseControl>
 		</div>
