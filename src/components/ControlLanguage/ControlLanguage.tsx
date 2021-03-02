@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import ReactSelect, { ValueType } from "react-select";
+import ReactSelect from "react-select";
 import { __ } from "@wordpress/i18n";
 import { BaseControl } from "@wordpress/components";
 import { useState } from "@wordpress/element";
@@ -21,8 +21,8 @@ export const ControlLanguage: FunctionComponent<EditProps> = props => {
 	const { attributes, setAttributes } = props;
 	const { language, label_type } = attributes;
 
-	const [selected, setSelected] = useState<ValueType<LanguageOption, false>>(
-		languages.find(({ value }) => value === language)
+	const [selected, setSelected] = useState<LanguageOption | null>(
+		languages.find(({ value }) => value === language) || null
 	);
 
 	return (
