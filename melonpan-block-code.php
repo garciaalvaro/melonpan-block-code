@@ -4,7 +4,7 @@
  * Plugin URI: https://wordpress.org/plugins/melonpan-block-code/
  * Description: Block to display code, with highlighted syntax, which can be copied to the clipboard.
  * Author: melonpan
- * Version: 2.0.2
+ * Version: 2.0.3
  * License: GPL3+
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
  */
@@ -16,7 +16,7 @@ if (!defined("ABSPATH")) {
 	exit();
 }
 
-define(__NAMESPACE__ . "\PLUGIN_VERSION", "2.0.2");
+define(__NAMESPACE__ . "\PLUGIN_VERSION", "2.0.3");
 define(__NAMESPACE__ . "\PLUGIN_NAME", "melonpan-block-code");
 define(__NAMESPACE__ . "\DIST_DIR", \plugins_url("dist/", __FILE__));
 define(__NAMESPACE__ . "\INC_DIR", \plugin_dir_path(__FILE__) . "inc/");
