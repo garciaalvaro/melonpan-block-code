@@ -50,6 +50,9 @@ Installation from the WordPress admin.
 
 == Changelog ==
 
+= 2.0.3 =
+* Updated dependencies
+
 = 2.0.2 =
 * Updated dependencies
 
